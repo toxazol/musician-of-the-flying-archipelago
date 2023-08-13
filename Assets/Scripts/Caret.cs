@@ -9,18 +9,31 @@ public struct Note
     public KeyCode keyCode;
 }
 
+[System.Serializable]
+public struct Tick 
+{
+    public AudioClip tic;
+    public AudioClip tac;
+}
+
+
 public class Caret : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float maxPatrolDistance = 812f;
-    [SerializeField] private float stepDistance = 1f;
-    [SerializeField] private float stepsPerSecond = 5f;
+    [SerializeField] private float pixelsInTrack = 812f;
+    [SerializeField] private int BPM = 120;
+    [SerializeField] private int barCount = 4;
+    [SerializeField] private int ticksPerBar = 4;
 
     [SerializeField] private Note[] notes;    
+    // [SerializeField] private Tick tick;
     
 
+    private bool isStarted = false;
     private Vector3 startingPosition;
-    private int playingNoteId;
+    // private Dictionary<double, AudioSource> noteTimeStamps = new();
+    private float trackTime;
+    private float caretSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -31,18 +44,32 @@ public class Caret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isStarted)
+        {
+            return;
+        }
+
         CheckRestart();
-        transform.position += new Vector3(stepDistance * stepsPerSecond * Time.deltaTime, 0, 0);
-        CheckNoteCollision();
+
+        trackTime = barCount * ticksPerBar * 60f / BPM;
+        caretSpeed = pixelsInTrack / trackTime;
+        transform.Translate(caretSpeed * Time.deltaTime, 0, 0);
+
         CheckInput();
+    }
+
+    public void UnPause()
+    {
+        // isStarted = true;
+        // StartCoroutine(PlaySoundAtInterval(GetComponent<AudioSource>(), 60f / BPM));
+        StartCoroutine(StartWith4Ticks());
     }
 
     void CheckRestart()
     {
-        if(Mathf.Abs(transform.position.x - startingPosition.x) > maxPatrolDistance)
+        if(Mathf.Abs(transform.position.x - startingPosition.x) > pixelsInTrack)
         {
             transform.position = startingPosition;
-            playingNoteId = 0;
         }
     }
     
@@ -61,24 +88,27 @@ public class Caret : MonoBehaviour
     {
         var noteInstance = Instantiate(note.note, transform.parent.transform, false);
         noteInstance.transform.Translate(transform.position.x - noteInstance.transform.position.x, 0, 0);
-        playingNoteId = noteInstance.GetInstanceID();
+
+        StartCoroutine(PlaySoundAtInterval(noteInstance.GetComponent<AudioSource>(), trackTime));
     }
 
-    void CheckNoteCollision()
+    private IEnumerator PlaySoundAtInterval(AudioSource sound, float interval)
     {
-        var hitNoteColliders = new List<Collider2D>();
-        var filter = new ContactFilter2D();
-        filter.NoFilter();
-        var collisions = Physics2D.OverlapCollider(GetComponent<Collider2D>(), filter, hitNoteColliders);
-        if(collisions > 0)
+        while (true)
         {
-            var hitNote = hitNoteColliders[0].gameObject;
-            if(playingNoteId == hitNote.GetInstanceID())
-            {
-                return;
-            }
-            playingNoteId = hitNote.GetInstanceID();
-            hitNote.GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(interval);
+            sound.Play();
         }
     }
+
+    private IEnumerator StartWith4Ticks()
+    {
+        for (int i=0; i<ticksPerBar; i++)
+        {
+            yield return new WaitForSeconds(60f / BPM);
+            GetComponent<AudioSource>().Play();
+        }
+        isStarted = true;
+    }
+
 }
