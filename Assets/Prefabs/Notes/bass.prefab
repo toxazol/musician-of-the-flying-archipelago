@@ -134,7 +134,15 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8aa7e6712c425a64d90dd1c615ee3182, type: 3}
     - target: {fileID: 8517304550668860916, guid: 8da8aa61ae1cfe841b002b232cb81185, type: 3}
       propertyPath: BypassEffects
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517304550668860916, guid: 8da8aa61ae1cfe841b002b232cb81185, type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517304550668860916, guid: 8da8aa61ae1cfe841b002b232cb81185, type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5487251491767123013, guid: 8da8aa61ae1cfe841b002b232cb81185, type: 3}
