@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput; 
     private Rigidbody2D rb;
+    private Animator animator;
     private List<RaycastHit2D> castCollisions = new();
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,10 +31,23 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(TryMove(moveInput)) return;
-        TryMove(new Vector2(moveInput.x, 0));
-        TryMove(new Vector2(0, moveInput.y)); // yes
-        // TryMove(moveInput);
+        if(TryMove(moveInput)
+        || TryMove(new Vector2(moveInput.x, 0))  // for player not to get stuck
+        || TryMove(new Vector2(0, moveInput.y))) // when moving diagonally
+        {
+            if(moveInput.x > 0)
+            {
+                animator.SetBool("isMovingR", true);
+                animator.SetBool("isMovingL", false);
+            } else {
+                animator.SetBool("isMovingR", false);
+                animator.SetBool("isMovingL", true);
+            }
+        } else {
+            animator.SetBool("isMovingR", false);
+            animator.SetBool("isMovingL", false);
+        }
+         
     }
 
     bool TryMove(Vector2 dir) 
