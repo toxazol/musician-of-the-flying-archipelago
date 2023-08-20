@@ -1,32 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class FriendController : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private Rigidbody2D friend;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float followDistance = 2f;
     [SerializeField] private ContactFilter2D moveFilter;
     [SerializeField] private float collisionOffset = 0.05f;
-
+    [SerializeField] private bool isFollow = true;
+    [SerializeField] private TextMeshProUGUI gui;
 
     private Vector2 moveInput; 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private Animator animator;
     private List<RaycastHit2D> castCollisions = new();
+    
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        moveInput = Vector2.zero;
+        if(!isFollow) return;
+
+        Vector2 friendDir = friend.position - rb.position;
+        if(friendDir.magnitude > followDistance)
+        {
+            moveInput = friendDir.normalized;
+        }
     }
 
     private void FixedUpdate() 
@@ -35,17 +49,15 @@ public class PlayerController : MonoBehaviour
         || TryMove(new Vector2(moveInput.x, 0))  // for player not to get stuck
         || TryMove(new Vector2(0, moveInput.y))) // when moving diagonally
         {
+            animator.SetBool("isMoving", true);
             if(moveInput.x > 0)
             {
-                animator.SetBool("isMovingR", true);
-                animator.SetBool("isMovingL", false);
+                sr.flipX = false;
             } else {
-                animator.SetBool("isMovingR", false);
-                animator.SetBool("isMovingL", true);
+                sr.flipX = true;
             }
         } else {
-            animator.SetBool("isMovingR", false);
-            animator.SetBool("isMovingL", false);
+            animator.SetBool("isMoving", false);
         }
          
     }
@@ -66,8 +78,10 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    void OnMove(InputValue moveVal) 
+    void OnWhistle()
     {
-        moveInput = moveVal.Get<Vector2>();
+        isFollow = !isFollow;
+        gui.text = isFollow ? "Follow: ON" : "Follow: OFF";
     }
+
 }

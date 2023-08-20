@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1603026970460628626}
   - component: {fileID: 8907145102921236797}
   - component: {fileID: 67174848560728082}
+  - component: {fileID: -1615490309724228351}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Player
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4e21a693a5a2f7e4eb8110557a38ddb6, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: b3cac3b8159fede47a061095b0903650, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -182,7 +183,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.17, y: 0.29}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -219,6 +220,9 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   collisionOffset: 0.05
+  hp: 100
+  maxHp: 100
+  hpUI: {fileID: 0}
 --- !u!95 &67174848560728082
 Animator:
   serializedVersion: 5
@@ -240,3 +244,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1615490309724228351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408653906253658920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbe22f77edf958469de17c6edd12804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 5000
+  precisionMul: 100
+  onceOnly: 0

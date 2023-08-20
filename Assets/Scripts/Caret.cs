@@ -60,9 +60,9 @@ public class Caret : MonoBehaviour
 
     public void UnPause()
     {
-        // isStarted = true;
-        // StartCoroutine(PlaySoundAtInterval(GetComponent<AudioSource>(), 60f / BPM));
-        StartCoroutine(StartWith4Ticks());
+        isStarted = true;
+        StartCoroutine(PlaySoundAtInterval(GetComponent<AudioSource>(), 60f / BPM));
+        // StartCoroutine(StartWith4Ticks());
     }
 
     void CheckRestart()
