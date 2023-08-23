@@ -85,4 +85,9 @@ public class PlayerController : MonoBehaviour, IDamageable
             Debug.Log("You are dead");
         }
     }
+
+    void OnFire()
+    {
+        animator.SetTrigger("isAttack");
+    }
 }
