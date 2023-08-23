@@ -48,6 +48,6 @@ public class Enemy : MonoBehaviour
         Debug.Log("test");
         if(collision.gameObject.tag != "Player") return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
-        damageableObj.OnHit(50);
+        damageableObj.OnHit(damage);
     }
 }
