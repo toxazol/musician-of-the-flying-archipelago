@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private float moveForce = 500f;
-    [SerializeField] private int damage = 5;
+    [SerializeField] private int damage = 50;
 
 
     Animator animator;
@@ -48,6 +48,6 @@ public class Enemy : MonoBehaviour
         Debug.Log("test");
         if(collision.gameObject.tag != "Player") return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
-        damageableObj.OnHit(damage);
+        damageableObj.OnHit(50);
     }
 }
