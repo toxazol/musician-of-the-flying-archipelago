@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         } else {
             animator.SetBool("isMovingR", false);
             animator.SetBool("isMovingL", false);
+            
         }
          
     }
