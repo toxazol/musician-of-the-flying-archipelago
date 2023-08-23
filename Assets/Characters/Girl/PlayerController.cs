@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IDamageable
@@ -73,7 +74,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void OnMove(InputValue moveVal) 
     {
-        moveInput = moveVal.Get<Vector2>();
+        if (!animator.GetBool("isDead"))
+        {
+            moveInput = moveVal.Get<Vector2>();
+        }
     }
 
     public void OnHit(int damage)
@@ -83,11 +87,22 @@ public class PlayerController : MonoBehaviour, IDamageable
         if(currentHp <= 0) 
         {
             Debug.Log("You are dead");
+            animator.SetBool("isDead", true);
+            animator.SetTrigger("dead");
         }
+    }
+
+    void OnRespawn()
+    {
+        Debug.Log("Respawned");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnFire()
     {
-        animator.SetTrigger("isAttack");
+        if (!animator.GetBool("isDead"))
+        {
+            animator.SetTrigger("isAttack");
+        }
     }
 }
