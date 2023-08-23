@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     bool TryMove(Vector2 dir) 
     {
-        if(dir == Vector2.zero) return false;
+        if(dir == Vector2.zero || animator.GetBool("isDead")) return false;
         
         int collisionCount = rb.Cast(
             dir, 
