@@ -1006,7 +1006,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1834750681}
         m_TargetAssemblyTypeName: Caret, Assembly-CSharp
-        m_MethodName: UnPause
+        m_MethodName: StartPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1109,11 +1109,16 @@ MonoBehaviour:
   BPM: 120
   barCount: 4
   ticksPerBar: 4
-  notes:
-  - note: {fileID: 942018598410041293, guid: 8da8aa61ae1cfe841b002b232cb81185, type: 3}
+  instruments:
+  - sound: {fileID: 8300000, guid: abcc40db6af299340b9526ce5b073ac2, type: 3}
     keyCode: 120
-  - note: {fileID: 8658460500044589582, guid: a487fe72cfcaad04693c4697fb3279b1, type: 3}
+  - sound: {fileID: 8300000, guid: 8aa7e6712c425a64d90dd1c615ee3182, type: 3}
     keyCode: 115
+  melody: []
+  tick:
+    tic: {fileID: 8300000, guid: 5c6577c51b7f8e74a98efd49b7eb1002, type: 3}
+    tac: {fileID: 8300000, guid: 7959e431d817e0240a8e9e34d1ecb45b, type: 3}
+  tolerance: 0.125
 --- !u!114 &1834750682
 MonoBehaviour:
   m_ObjectHideFlags: 0
