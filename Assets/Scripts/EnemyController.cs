@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private float moveForce = 500f;
-    [SerializeField] private int damage = 50;
+    [SerializeField] private int maxHp = 50;
+    [SerializeField] private int attackDamage = 5;
 
 
     Animator animator;
@@ -48,6 +49,11 @@ public class Enemy : MonoBehaviour
         Debug.Log("test");
         if(collision.gameObject.tag != "Player") return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
-        damageableObj.OnHit(50);
+        damageableObj.OnHit(attackDamage);
+    }
+
+    public void OnHit(int damage)
+    {
+        Debug.Log("enemy damaged");
     }
 }
