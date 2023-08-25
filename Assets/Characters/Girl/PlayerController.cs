@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour, IDamageable
     [Header("Settings")] [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private ContactFilter2D moveFilter;
     [SerializeField] private float collisionOffset = 0.05f;
-    [SerializeField] private int currentHp = 100;
-    [SerializeField] private int maxHp = 100;
     [SerializeField] private Image hpUI;
+    [SerializeField] private AttackZone attackZone;
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
+    private Health health;
     private SpriteRenderer spriteRenderer;
     private Blinking blinking;
     private List<RaycastHit2D> castCollisions = new();
@@ -26,10 +26,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         blinking = GetComponent<Blinking>();
-        hpUI.fillAmount = currentHp / (float)maxHp;
+        hpUI.fillAmount = health.GetHealthPercentage();
+        EndAttack();
     }
 
     // Update is called once per frame
@@ -58,6 +60,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    bool isTurnedLeft()
+    {
+        var state = animator.GetCurrentAnimatorStateInfo(0);
+        return state.IsName("idle_left")
+               || state.IsName("run_left")
+               || state.IsName("attack_left");
+    }
+
     bool TryMove(Vector2 dir)
     {
         if (dir == Vector2.zero || animator.GetBool("isDead")) return false;
@@ -79,7 +89,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator.SetBool("isMovingR", isRight);
         animator.SetBool("isMovingL", !isRight);
     }
-    
+
     private void StopMoveAnimation()
     {
         animator.SetBool("isMovingR", false);
@@ -96,15 +106,20 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnHit(int damage)
     {
-        currentHp -= damage;
-        hpUI.fillAmount = currentHp / (float)maxHp;
-        blinking.Blink(4, 0.05f);
-        if (currentHp <= 0)
+        health.Hit(damage);
+        hpUI.fillAmount = health.GetHealthPercentage();
+        blinking.Blink();
+        if (health.IsDead())
         {
-            Debug.Log("You are dead");
-            animator.SetBool("isDead", true);
-            animator.SetTrigger("dead");
+            OnDie();
         }
+    }
+
+    public void OnDie()
+    {
+        Debug.Log("You are dead");
+        animator.SetBool("isDead", true);
+        animator.SetTrigger("dead");
     }
 
     void OnRespawn()
@@ -120,8 +135,13 @@ public class PlayerController : MonoBehaviour, IDamageable
             return;
         }
 
-        var playerPos = Camera.main.WorldToScreenPoint(rb.position);
-        var isCursorOnRightSide = Input.mousePosition.x >= playerPos.x;
-        animator.SetTrigger("Attack" + (isCursorOnRightSide ? "Right" : "Left"));
+        attackZone.transform.localScale = new Vector3(isTurnedLeft() ? -1 : 1, 1, 1);
+        animator.SetTrigger("Attack");
+        Invoke("EndAttack", 0.3f);
+    }
+
+    private void EndAttack()
+    {
+        attackZone.transform.localScale = new Vector3(0, 0, 0);
     }
 }
