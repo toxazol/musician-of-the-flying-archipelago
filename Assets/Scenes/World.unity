@@ -17223,6 +17223,10 @@ PrefabInstance:
       propertyPath: attackZone
       value: 
       objectReference: {fileID: 1740552102}
+    - target: {fileID: 8907145102921236797, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: invulnerabilityTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
