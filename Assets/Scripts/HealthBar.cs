@@ -17,4 +17,9 @@ public class HealthBar : MonoBehaviour
         canvas.enabled = health.GetMaxHp() != health.GetCurrentHp();
     }
 
+    public void setFullHp()
+    {
+        canvas.enabled = false;
+    }
+
 }

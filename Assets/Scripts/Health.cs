@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     
     public void Hit(int damage)
     {
+        if (damage < 1) damage = 1;
         currentHp -= damage;
     }
 

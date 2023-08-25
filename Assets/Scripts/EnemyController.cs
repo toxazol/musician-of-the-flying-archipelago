@@ -1,21 +1,24 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 {
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private float moveForce = 500f;
     [SerializeField] private int attackDamage = 5;
     [SerializeField] private string enemyName = "blob";
+    [SerializeField] private float knockbackResist = 0f;
+    [SerializeField] private int armor = 0;
 
     Blinking blinking;
     Animator animator;
     Rigidbody2D rb;
     private HealthBar healthBar;
     private Health health;
+
     private float knockbackPower;
     private int knockbackTicks = 0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,35 +27,34 @@ public class Enemy : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
         healthBar = GetComponentInChildren<HealthBar>();
-        healthBar.updateHp(health);
+        healthBar.Invoke("setFullHp", 0f);
     }
 
     public string GetEnemyName()
     {
         return enemyName;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void FixedUpdate()
     {
         if (animator.IsDestroyed()) return;
-        if(detectionZone.detectedObjs.Count == 0)
+        if (detectionZone.detectedObjs.Count == 0)
         {
             animator.SetBool("isMoving", false);
             return;
         }
 
         animator.SetBool("isMoving", true);
-        
+
         if (knockbackPower > 0f && knockbackTicks < 10)
         {
             var dir = (-(detectionZone.detectedObjs[0].transform.position - transform.position).normalized);
-            rb.AddForce(knockbackPower * Time.fixedDeltaTime * dir);
+            rb.AddForce((knockbackPower - knockbackResist) * Time.fixedDeltaTime * dir);
             knockbackTicks++;
         }
         else
@@ -62,11 +64,9 @@ public class Enemy : MonoBehaviour, IDamageable
             knockbackTicks = 0;
             knockbackPower = 0;
         }
-        
-
     }
 
-    public void SetKnockback(float knockbackPower)
+    public void OnKnockback(float knockbackPower)
     {
         this.knockbackPower = knockbackPower;
     }
@@ -74,16 +74,16 @@ public class Enemy : MonoBehaviour, IDamageable
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("test");
-        if(collision.gameObject.tag != "Player") return;
+        if (collision.gameObject.tag != "Player") return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
         damageableObj.OnHit(attackDamage);
     }
 
     public void OnHit(int damage)
     {
-        health.Hit(damage);
+        health.Hit(damage - armor/2);
         healthBar.updateHp(health);
-        
+
         if (health.IsDead())
         {
             OnDie();
@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void OnDie()
     {
         Debug.Log("Blob dead.");
-        blinking.Blink( false);
+        blinking.Blink(false);
         Destroy(rb);
         Destroy(animator);
         Destroy(detectionZone);

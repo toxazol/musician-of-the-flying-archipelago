@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttackZone : MonoBehaviour
 {
     [SerializeField] private int attackDamage = 5;
+    [SerializeField] private bool isPlayerSource = true;
+    [SerializeField] private float knockbackPower = 5000f;
 
     public List<Collider2D> detectedObjs = new();
 
@@ -21,14 +23,20 @@ public class AttackZone : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.TryGetComponent(out Enemy enemy))
+        if (collider.gameObject.tag.Equals("Enemy") && !isPlayerSource) return; // enemy don't kill each other
+        if (collider.gameObject.tag.Equals("Friend") && isPlayerSource) return; // no friendly fier
+        if (collider.gameObject.tag.Equals("Player") && isPlayerSource) return; // no self harm
+        
+        if (collider.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            Debug.Log("Attacked " + enemy.GetEnemyName());
-            enemy.SetKnockback(5000f);
-            enemy.OnHit(attackDamage);
+            damageable.OnHit(attackDamage);
+        }
+        if (collider.gameObject.TryGetComponent(out IKnockbackable knockbackable))
+        {
+            knockbackable.OnKnockback(knockbackPower);
         }
     }
-
+    
     private void OnTriggerExit2D(Collider2D other) {
         detectedObjs.Remove(other);
     }
