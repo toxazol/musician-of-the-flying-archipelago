@@ -911,7 +911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650981243849916495, guid: 84bc1a4c755c6d04cbe1fa2f8a89fd0f, type: 3}
       propertyPath: m_Name
-      value: Blob (1)
+      value: Big daddy
       objectReference: {fileID: 0}
     - target: {fileID: 2650981243849916495, guid: 84bc1a4c755c6d04cbe1fa2f8a89fd0f, type: 3}
       propertyPath: m_IsActive
