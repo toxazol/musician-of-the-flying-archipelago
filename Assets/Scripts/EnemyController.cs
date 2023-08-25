@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     [SerializeField] private string enemyName = "blob";
     [SerializeField] private float knockbackResist = 0f;
     [SerializeField] private int armor = 0;
+    [SerializeField] private bool isDummy = false;
 
     Blinking blinking;
     Animator animator;
@@ -45,7 +46,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     void FixedUpdate()
     {
-        if (animator.IsDestroyed()) return;
+        if (animator.IsDestroyed() || isDummy) return;
         if (detectionZone.detectedObjs.Count == 0)
         {
             animator.SetBool("isMoving", false);
@@ -76,7 +77,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player") return;
+        if (collision.gameObject.tag != "Player" || isDummy) return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
         damageableObj.OnHit(attackDamage);
     }
