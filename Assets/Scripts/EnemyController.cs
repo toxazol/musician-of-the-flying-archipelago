@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("test");
         if (collision.gameObject.tag != "Player") return;
         IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
         damageableObj.OnHit(attackDamage);
@@ -96,7 +95,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void OnDie()
     {
-        Debug.Log("Blob dead.");
         blinking.Blink(false);
         Destroy(rb);
         Destroy(animator);
