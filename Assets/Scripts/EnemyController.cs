@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour, IDamageable
             var dir = (-(detectionZone.detectedObjs[0].transform.position - transform.position).normalized);
             rb.AddForce(knockbackPower * Time.fixedDeltaTime * dir);
             knockbackTicks++;
-            Debug.Log(knockbackTicks);
         }
         else
         {
@@ -87,12 +86,7 @@ public class Enemy : MonoBehaviour, IDamageable
         
         if (health.IsDead())
         {
-            blinking.Blink( false);
-            Destroy(rb);
-            Destroy(animator);
-            Destroy(detectionZone);
-            Destroy(GetComponent<Ysort>());
-            Invoke("OnDie", 0.5f);
+            OnDie();
         }
         else
         {
@@ -103,6 +97,16 @@ public class Enemy : MonoBehaviour, IDamageable
     public void OnDie()
     {
         Debug.Log("Blob dead.");
+        blinking.Blink( false);
+        Destroy(rb);
+        Destroy(animator);
+        Destroy(detectionZone);
+        Destroy(GetComponent<Ysort>());
+        Invoke("DestroyEnemy", 0.7f);
+    }
+
+    private void DestroyEnemy()
+    {
         Destroy(gameObject);
     }
 }
