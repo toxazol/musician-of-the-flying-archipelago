@@ -331,6 +331,7 @@ MonoBehaviour:
   enemyName: blob
   knockbackResist: 0
   armor: 0
+  isDummy: 0
 --- !u!1 &3857480565159338805
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +827,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6000
   m_TargetDisplay: 0
 --- !u!114 &6728095090138134718
 MonoBehaviour:
