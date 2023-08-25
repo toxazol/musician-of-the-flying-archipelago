@@ -13,8 +13,10 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     Blinking blinking;
     Animator animator;
     Rigidbody2D rb;
+    
     private HealthBar healthBar;
     private Health health;
+    private DamageDisplay damageDisplay;
 
     private float knockbackPower;
     private int knockbackTicks = 0;
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
         healthBar = GetComponentInChildren<HealthBar>();
+        damageDisplay = GetComponentInChildren<DamageDisplay>();
         healthBar.Invoke("setFullHp", 0f);
     }
 
@@ -80,7 +83,9 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void OnHit(int damage)
     {
-        health.Hit(damage - armor/2);
+        var calculatedDamage = damage - armor/2;
+        health.Hit(calculatedDamage);
+        damageDisplay.AddDamage(calculatedDamage);
         healthBar.updateHp(health);
 
         if (health.IsDead())
