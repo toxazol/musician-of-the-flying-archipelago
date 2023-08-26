@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 5
+  isPlayerSource: 1
+  knockbackPower: 5000
   detectedObjs: []
 --- !u!1 &8408653906253658920
 GameObject:
@@ -107,11 +109,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1803642474959342318}
   - component: {fileID: 2727496482099349105}
-  - component: {fileID: 6526480439791207335}
   - component: {fileID: 7131832763893257596}
   - component: {fileID: 1603026970460628626}
   - component: {fileID: 8907145102921236797}
   - component: {fileID: 67174848560728082}
+  - component: {fileID: 3006072063010217669}
+  - component: {fileID: 1580024596836123036}
   - component: {fileID: -1615490309724228351}
   m_Layer: 0
   m_Name: Girl
@@ -182,42 +185,12 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6526480439791207335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8408653906253658920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b3cac3b8159fede47a061095b0903650, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: 0
-  m_Camera: {fileID: 0}
 --- !u!50 &7131832763893257596
 Rigidbody2D:
   serializedVersion: 4
@@ -231,9 +204,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -244,7 +217,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1603026970460628626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,18 +250,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0010321736, y: -0.15998954}
+  m_Offset: {x: 0.095875025, y: -1.054578}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3, y: 3}
-    newSize: {x: 0.48, y: 0.48}
+    newSize: {x: 3, y: 3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07331693, y: 0.03202927}
+  m_Size: {x: 0.7137637, y: 0.1900351}
   m_EdgeRadius: 0
 --- !u!114 &8907145102921236797
 MonoBehaviour:
@@ -302,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54f0a8986852584f8a935a2fbbc46c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   moveFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -319,7 +292,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   collisionOffset: 0.05
   hpUI: {fileID: 0}
-  attackZone: {fileID: 0}
+  attackZone: {fileID: 8184438080768356726}
+  invulnerabilityTime: 1
 --- !u!95 &67174848560728082
 Animator:
   serializedVersion: 5
@@ -341,6 +315,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3006072063010217669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408653906253658920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292ee9655c4e4f8e9aeab291196afba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHp: 100
+  maxHp: 100
+--- !u!114 &1580024596836123036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408653906253658920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4df82dc8364a648330841dd9dcae63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkColor: {r: 255, g: 255, b: 255, a: 0}
+  timesOfBLinking: 4
+  blinkingSpeed: 0.05
 --- !u!114 &-1615490309724228351
 MonoBehaviour:
   m_ObjectHideFlags: 0
