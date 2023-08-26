@@ -10,10 +10,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject deathUI;
     [SerializeField] private GameObject menuUI;
+    [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
 
     private PlayerInput playerInput;
     private bool isPaused = false;
+    private bool isCraft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,12 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = isPaused ? 0.0f : 1.0f;
         playerInput.enabled = !isPaused;
         menuUI.SetActive(isPaused);
+    }
+    public void OnCraftMenu()
+    {
+        isCraft = !isCraft;
+        playerInput.enabled = !isCraft;
+        menuUI.SetActive(isCraft);
     }
     public void LoadDeathMenu()
     {

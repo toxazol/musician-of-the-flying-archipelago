@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private AttackZone attackZone;
     [SerializeField] private float invulnerabilityTime = 1f;
 
+    [SerializeField] private Harmonoid harmonoid;
+
     private Vector2 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
@@ -157,5 +159,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void EndAttack()
     {
         attackZone.transform.localScale = new Vector3(0, 0, 0);
+    }
+    void OnWhistle()
+    {
+        harmonoid.OnFollow();
     }
 }
