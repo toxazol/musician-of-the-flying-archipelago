@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private ContactFilter2D moveFilter;
     [SerializeField] private float collisionOffset = 0.05f;
     [SerializeField] private Image hpUI;
+    [SerializeField] private LevelManager levelManager;
     [SerializeField] private AttackZone attackZone;
     [SerializeField] private float invulnerabilityTime = 1f;
 
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Blinking blinking;
     private List<RaycastHit2D> castCollisions = new();
     private int isInvulnerable = 0;
+    private PlayerInput playerInput;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         blinking = GetComponent<Blinking>();
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.enabled = true;
         hpUI.fillAmount = health.GetHealthPercentage();
         EndAttack();
     }
@@ -99,10 +103,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void OnMove(InputValue moveVal)
     {
-        if (!animator.GetBool("isDead"))
-        {
-            moveInput = moveVal.Get<Vector2>();
-        }
+        moveInput = moveVal.Get<Vector2>();
     }
 
     public void OnHit(int damage)
@@ -124,21 +125,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         Debug.Log("You are dead");
         animator.SetBool("isDead", true);
         animator.SetTrigger("dead");
+
+        playerInput.enabled = false;
+        levelManager.LoadDeathMenu();
     }
 
     void OnRespawn()
     {
         Debug.Log("Respawned");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        levelManager.ReloadCurentScene();
     }
 
     void OnFire()
     {
-        if (animator.GetBool("isDead"))
-        {
-            return;
-        }
-
         attackZone.transform.localScale = new Vector3(isTurnedLeft() ? -1 : 1, 1, 1);
         animator.SetTrigger("Attack");
         Invoke("EndAttack", 0.3f);

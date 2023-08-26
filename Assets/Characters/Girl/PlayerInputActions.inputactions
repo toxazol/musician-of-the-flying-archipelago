@@ -44,7 +44,7 @@
                 {
                     "name": "Respawn",
                     "type": "Button",
-                    "id": "89afddb2-bfe3-4b8e-a0b6-13d13ee43729",
+                    "id": "5938ccd9-3e01-4e50-aa95-2160a07bf06b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -285,7 +285,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c5390f08-295d-41f5-942c-33afb5826418",
+                    "id": "3a201d93-40f8-41a2-812e-8c845c492644",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
@@ -386,6 +386,15 @@
                     "type": "PassThrough",
                     "id": "e2b04c38-0bd8-418f-9932-da519201de6b",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0ee67f6d-2ae0-4189-be14-1a0c2aff6281",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -670,7 +679,7 @@
                 {
                     "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
@@ -807,6 +816,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "289400b8-a1e1-48a4-8676-c60ec2d7e123",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
