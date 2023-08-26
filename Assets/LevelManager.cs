@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
         gameOverlay.SetActive(true);
         deathUI.SetActive(false);
         menuUI.SetActive(false);
+        craftUI.SetActive(false);
 
         playerInput = player.GetComponent<PlayerInput>();
     }
@@ -41,11 +42,14 @@ public class LevelManager : MonoBehaviour
         playerInput.enabled = !isPaused;
         menuUI.SetActive(isPaused);
     }
-    public void OnCraftMenu()
+    public void OnCraft()
     {
+        if (!isCraft && player.GetComponent<PlayerController>().GetDistanceToHarmonoid() > 3.0f)
+            return;
+
         isCraft = !isCraft;
         playerInput.enabled = !isCraft;
-        menuUI.SetActive(isCraft);
+        craftUI.SetActive(isCraft);
     }
     public void LoadDeathMenu()
     {

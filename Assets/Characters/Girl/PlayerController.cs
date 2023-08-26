@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private AttackZone attackZone;
     [SerializeField] private float invulnerabilityTime = 1f;
 
-    [SerializeField] private Harmonoid harmonoid;
+    [SerializeField] private GameObject harmonoid;
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -162,6 +163,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
     void OnWhistle()
     {
-        harmonoid.OnFollow();
+        harmonoid.GetComponent<FriendController>().OnWhistle();
+    }
+    public float GetDistanceToHarmonoid()
+    {
+        return Vector3.Distance(harmonoid.transform.position, this.GameObject().transform.position);
     }
 }

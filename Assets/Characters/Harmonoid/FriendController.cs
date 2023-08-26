@@ -78,7 +78,7 @@ public class FriendController : MonoBehaviour
         return true;
     }
 
-    void OnWhistle()
+    public void OnWhistle()
     {
         isFollow = !isFollow;
         gui.text = isFollow ? "Follow: ON" : "Follow: OFF";
