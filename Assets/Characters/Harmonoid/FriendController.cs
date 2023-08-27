@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class FriendController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class FriendController : MonoBehaviour
     [SerializeField] private ContactFilter2D moveFilter;
     [SerializeField] private float collisionOffset = 0.05f;
     [SerializeField] private bool isFollow = true;
-    [SerializeField] private TextMeshProUGUI gui;
+    [SerializeField] private Image gui;
 
     private Vector2 moveInput; 
     private Rigidbody2D rb;
@@ -81,7 +82,7 @@ public class FriendController : MonoBehaviour
     public void OnWhistle()
     {
         isFollow = !isFollow;
-        gui.text = isFollow ? "Follow: ON" : "Follow: OFF";
+        gui.color = isFollow ? Color.white : Color.black;
     }
 
 }
