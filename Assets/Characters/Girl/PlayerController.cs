@@ -161,10 +161,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         attackZone.transform.localScale = new Vector3(0, 0, 0);
     }
-    void OnWhistle()
-    {
-        harmonoid.GetComponent<FriendController>().OnWhistle();
-    }
+
     public float GetDistanceToHarmonoid()
     {
         return Vector3.Distance(harmonoid.transform.position, this.GameObject().transform.position);
