@@ -20,7 +20,8 @@ public class FixedLooper : MonoBehaviour
     }
     [SerializeField] private Note[] notes;
     [SerializeField] private GameObject cellPrefab;
-    [SerializeField] private bool isTick = false;
+    [SerializeField] private int tickEvery = 0;
+    [SerializeField] private bool isPause = false;
     private int frame = 0;
     private int pulse = 0;
 
@@ -34,18 +35,18 @@ public class FixedLooper : MonoBehaviour
         notes = new Note[trackLen];
         
         audioSource = GetComponent<AudioSource>();
-        if(isTick)
+        if(tickEvery > 0)
         {
-            InitTicker();
+            InitTicker(tickEvery);
         }
         InitGrid();
     }
 
-    void InitTicker()
+    void InitTicker(int tickEvery)
     {
         for(int i = 0; i < trackLen; i++)
         {
-            if(i%4 != 0 ) continue;
+            if(i%tickEvery != 0 ) continue;
             notes[i].isActive = true;
         }
     }
@@ -70,17 +71,15 @@ public class FixedLooper : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(isPause)
+            return;
         if(pulse >= trackLen)
-        {
             pulse = 0;
-        }
 
         MoveCaret();
 
         if(frame % fpb == 0 && notes[pulse++].isActive)
-        {
             audioSource.Play();
-        }
         frame++;
     }
 
@@ -91,6 +90,11 @@ public class FixedLooper : MonoBehaviour
         var prevInd = pulse - 1 >= 0 ? pulse - 1 : trackLen - 1;
         var prevBtnPlayed = notes[prevInd].toggle.transform.Find("Played").gameObject;
         prevBtnPlayed.SetActive(false);
+    }
+
+    void OnToggleMusic()
+    {
+        isPause = !isPause;
     }
 
 }

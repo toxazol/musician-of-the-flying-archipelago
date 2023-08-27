@@ -443,7 +443,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &122603506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +625,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &219936123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +802,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &249575505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,7 +1926,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &795427095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2108,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &835464939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,7 +2285,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &922635361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,7 +2729,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &995255127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18582,7 +18589,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 13d06bdfc6d28ee459b6c24167f363be, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &1454104228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18758,7 +18766,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &1496345674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18934,7 +18943,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: f54c77fe743960c40a32a38d3f18ee2a, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &1535774911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19110,7 +19120,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &1550503894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19540,10 +19551,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.000486618
+    x: 0.00077041605
     y: 0
-    width: 0.9985401
-    height: 0.9996107
+    width: 0.9984592
+    height: 1.0006161
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -20887,7 +20898,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  isTick: 0
+  tickEvery: 0
+  isPause: 0
 --- !u!114 &2051767419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21063,7 +21075,8 @@ MonoBehaviour:
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 671732002eb141549b7a101f38d5424d, type: 3}
-  isTick: 1
+  tickEvery: 4
+  isPause: 0
 --- !u!114 &2085583146
 MonoBehaviour:
   m_ObjectHideFlags: 0
