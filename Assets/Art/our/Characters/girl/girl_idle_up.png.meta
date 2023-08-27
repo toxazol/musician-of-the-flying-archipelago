@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 528c2b33ecb7d9e489bc058d25445486
+guid: 6596ad7ec5cfc884dbd6b717e19ac5a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: damage_0
+      name: girl_idle_up_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b03d86c0b93090941af96fa5e2ce9c61
-      internalID: -1334606769
+      spriteID: d4e0554f05830bf43a3a21605af2ec01
+      internalID: 217504427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: damage_1
+      name: girl_idle_up_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a90915bdbb3d541a01a195b2a36abe
-      internalID: 151934327
+      spriteID: 0bf84252b0212254f8689df1a31bfc33
+      internalID: 1152116170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: damage_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 275238b9734f59b4c89b40a1ba9b8674
-      internalID: -1054956550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: damage_3
+      name: girl_idle_up_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2656cec714d4d68469aba078d03c2fce
-      internalID: -1610847784
+      spriteID: af4d1ba347954ab44a2a6dc4d5c79789
+      internalID: 1685297919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_idle_up_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a3d6f3a72b04c429a1f60cfedd2077
+      internalID: -1625226610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_idle_up_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1e2b0d59ed12d4b928d4ced50afd75
+      internalID: 1720934520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_idle_up_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d1e241412e9464a8ac5a7178bd51cf
+      internalID: 459978343
       vertices: []
       indices: 
       edges: []
@@ -217,10 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      damage_0: -1334606769
-      damage_1: 151934327
-      damage_2: -1054956550
-      damage_3: -1610847784
+      girl_idle_up_0: 217504427
+      girl_idle_up_1: 1152116170
+      girl_idle_up_2: 1685297919
+      girl_idle_up_3: -1625226610
+      girl_idle_up_4: 1720934520
+      girl_idle_up_5: 459978343
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

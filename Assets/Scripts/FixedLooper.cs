@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,9 @@ public class FixedLooper : MonoBehaviour
 
     // [SerializeField] private static int BPM = 120;
     // [SerializeField] private int maxPPM = (int) (60 * 60 / Time.fixedDeltaTime); // max pulse per minute
-    [SerializeField] private int fpb = 4; // frames per beat // TODO: calculate 
+    [SerializeField] private int fpb = 8; // frames per beat // TODO: calculate 
     [SerializeField] private int bars = 4;
-    [SerializeField] private int noteDivision = 4;
+    [SerializeField] private int noteDivision = 8;
     [SerializeField] private int trackLen;
     [SerializeField] public struct Note
     {
@@ -22,6 +23,8 @@ public class FixedLooper : MonoBehaviour
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private int tickEvery = 0;
     [SerializeField] private bool isPause = false;
+    [SerializeField] private bool isHighlighted = false;
+    [SerializeField] private Color highColor;
     private int frame = 0;
     private int pulse = 0;
 
@@ -53,10 +56,12 @@ public class FixedLooper : MonoBehaviour
 
     void InitGrid()
     {
+        int barLen = noteDivision;
         for(int i = 0; i < trackLen; i++)
         {
             int index = i;
             var cell = Instantiate(cellPrefab, this.transform);
+            ColorizeCell(cell, i, barLen);
             var toggle = cell.GetComponent<Toggle>();
             notes[i].toggle = toggle;
             toggle.isOn = notes[i].isActive;
@@ -66,6 +71,14 @@ public class FixedLooper : MonoBehaviour
         }
     }
 
+    void ColorizeCell(GameObject cell, int i, int barLen)
+    {
+        if(i % barLen == 0)
+            isHighlighted = !isHighlighted;
+        if(!isHighlighted)
+            return;
+        cell.GetComponent<Image>().color = highColor;
+    }
 
 
     // Update is called once per frame

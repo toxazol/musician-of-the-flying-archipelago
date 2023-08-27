@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8b9dd12a24cff0646811d74e4b30777c
+guid: 5a2f61093ee6f9449b901de4b5d2f658
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,106 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: girl_idle_down_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4ad70c3d50f23b4695d7178e31d5fc9
-      internalID: -2005539365
+      spriteID: f4890646afd123c43b146fc43b747e03
+      internalID: -1137069395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: girl_idle_down_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42963bb07fb79fc479d3ac769b80bd5c
-      internalID: 386008617
+      spriteID: 80bba4edc3372bd4ba987f033e792beb
+      internalID: 980647488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 347cd3e7c4d4cbd4490cb19c182bc1e7
-      internalID: -601862274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_3
+      name: girl_idle_down_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b33e86adad21d45b6114597c0e30e0
-      internalID: -516570019
+      spriteID: a9ffeb60cd68e864fbc6c285ece4d844
+      internalID: -265398469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: girl_idle_down_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 144
         y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7f6c26e04f08f74e8d54f274f8bac15
-      internalID: 1977976340
+      spriteID: 802929f51f3ead64f970c72647f6985c
+      internalID: 119609446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_idle_down_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776a9a72c298c4d44b1afb2594f0c410
+      internalID: 1187799498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_idle_down_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17fb3f1bc712f14fb8fadedbd2f1a38
+      internalID: 353996293
       vertices: []
       indices: 
       edges: []
@@ -238,11 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: -2005539365
-      idle_1: 386008617
-      idle_2: -601862274
-      idle_3: -516570019
-      idle_4: 1977976340
+      girl_idle_down_0: -1137069395
+      girl_idle_down_1: 980647488
+      girl_idle_down_2: -265398469
+      girl_idle_down_3: 119609446
+      girl_idle_down_4: 1187799498
+      girl_idle_down_5: 353996293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
