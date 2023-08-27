@@ -9,11 +9,16 @@ public class FixedLooper : MonoBehaviour
 
     // [SerializeField] private static int BPM = 120;
     // [SerializeField] private int maxPPM = (int) (60 * 60 / Time.fixedDeltaTime); // max pulse per minute
-    [SerializeField] private static int fpb = 4; // frames per beat // TODO: calculate 
-    [SerializeField] private static int bars = 4;
-    [SerializeField] private static int noteDivision = 4;
-    [SerializeField] private static int trackLen = bars * noteDivision; // 4 bars of 16th
-    [SerializeField] private bool[] notes = new bool[trackLen];
+    [SerializeField] private int fpb = 4; // frames per beat // TODO: calculate 
+    [SerializeField] private int bars = 4;
+    [SerializeField] private int noteDivision = 4;
+    [SerializeField] private int trackLen;
+    [SerializeField] public struct Note
+    {
+        public bool isActive;
+        public Toggle toggle;
+    }
+    [SerializeField] private Note[] notes;
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private bool isTick = false;
     private int frame = 0;
@@ -25,6 +30,9 @@ public class FixedLooper : MonoBehaviour
     
     void Start()
     {
+        trackLen = bars * noteDivision; 
+        notes = new Note[trackLen];
+        
         audioSource = GetComponent<AudioSource>();
         if(isTick)
         {
@@ -38,7 +46,7 @@ public class FixedLooper : MonoBehaviour
         for(int i = 0; i < trackLen; i++)
         {
             if(i%4 != 0 ) continue;
-            notes[i] = true;
+            notes[i].isActive = true;
         }
     }
 
@@ -48,11 +56,11 @@ public class FixedLooper : MonoBehaviour
         {
             int index = i;
             var cell = Instantiate(cellPrefab, this.transform);
-            var btn = cell.GetComponent<Toggle>();
-
-            btn.isOn = notes[i];
-            btn.onValueChanged.AddListener((val)=>{
-                notes[index] = val;
+            var toggle = cell.GetComponent<Toggle>();
+            notes[i].toggle = toggle;
+            toggle.isOn = notes[i].isActive;
+            toggle.onValueChanged.AddListener((val)=>{
+                notes[index].isActive = val;
             });
         }
     }
@@ -66,11 +74,23 @@ public class FixedLooper : MonoBehaviour
         {
             pulse = 0;
         }
-        if(frame % fpb == 0 && notes[pulse++])
+
+        MoveCaret();
+
+        if(frame % fpb == 0 && notes[pulse++].isActive)
         {
             audioSource.Play();
         }
         frame++;
+    }
+
+    void MoveCaret()
+    {
+        var curBtnPlayed = notes[pulse].toggle.transform.Find("Played").gameObject;
+        curBtnPlayed.SetActive(true);
+        var prevInd = pulse - 1 >= 0 ? pulse - 1 : trackLen - 1;
+        var prevBtnPlayed = notes[prevInd].toggle.transform.Find("Played").gameObject;
+        prevBtnPlayed.SetActive(false);
     }
 
 }
