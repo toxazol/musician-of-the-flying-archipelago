@@ -206,17 +206,6 @@
                 },
                 {
                     "name": "",
-                    "id": "63156942-62ed-4531-b70a-3b7a7bf0cc26",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3bb439ce-67dc-4ec3-824f-8cf6b98e3241",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",

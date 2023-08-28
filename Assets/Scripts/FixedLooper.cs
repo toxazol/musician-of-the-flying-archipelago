@@ -27,6 +27,7 @@ public class FixedLooper : MonoBehaviour
     [SerializeField] private float indicationSecs = 0.3f;
     [SerializeField] private GameObject hitIndicator;
     [SerializeField] private GameObject targetRow;
+    [SerializeField] private LooperSettings settings;
     private int frame = 0;
     private int pulse = 0;
     private AudioSource audioSource;
@@ -34,6 +35,12 @@ public class FixedLooper : MonoBehaviour
 
     void Start()
     {
+        noteDivision = settings.noteDivision;
+        isHighlighted = settings.isHighlighted;
+        highColor = settings.highColor;
+        indicationSecs = settings.indicationSecs;
+        hitIndicator = settings.hitIndicator;
+
         trackLen = bars * noteDivision; 
         notes = new Note[trackLen];
         
@@ -91,7 +98,7 @@ public class FixedLooper : MonoBehaviour
 
         MoveCaret();
 
-        if(frame % fpb == 0 && notes[pulse++].isActive)
+        if(frame % settings.fpb == 0 && notes[pulse++].isActive)
             audioSource.Play();
         frame++;
     }
@@ -112,13 +119,12 @@ public class FixedLooper : MonoBehaviour
 
     void OnFire()
     {
-        if(!isRhythmGame)
+        if(!isRhythmGame || isPause)
             return;
         
-        int fireFrame = frame + userFrameDelta;
-        
-        int from = fireFrame - userFrameTolerance;
-        int to = fireFrame + userFrameTolerance;
+        int fireFrame = frame + settings.userFrameDelta;
+        int from = fireFrame - settings.userFrameTolerance;
+        int to = fireFrame + settings.userFrameTolerance;
         for(int i = fireFrame, step = 1; i >= from && i <= to;)
         {
             int firePulse = GetPulseFromFrame(i);   
@@ -131,9 +137,8 @@ public class FixedLooper : MonoBehaviour
             // go one step at a time further from the center
             i += step;
             step++; 
-            step*= -1;
+            step *= -1;
         }
-
     }
 
     void StopIndication()
@@ -143,10 +148,10 @@ public class FixedLooper : MonoBehaviour
 
     int GetPulseFromFrame(int frame)
     {
-        if(frame % fpb > 0)
+        if(frame % settings.fpb > 0)
             return -1;
 
-        int pulses = frame / fpb + 1;
+        int pulses = frame / settings.fpb + 1;
         int curPulse = pulses % trackLen;
 
         return curPulse; 

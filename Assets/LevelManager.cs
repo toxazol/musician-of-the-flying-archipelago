@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject calibrationUI;
     [SerializeField] private GameObject menuUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
@@ -42,6 +43,13 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = isPaused ? 0.0f : 1.0f;
         playerInput.enabled = !isPaused;
         menuUI.SetActive(isPaused);
+    }
+    public void OnCalibration()
+    {
+        Time.timeScale = 1.0f;
+        gameOverlay.SetActive(false);
+        menuUI.SetActive(false);
+        calibrationUI.SetActive(true);
     }
     public void OnCraft()
     {
