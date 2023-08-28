@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private float invulnerabilityTime = 1f;
 
     [SerializeField] private GameObject harmonoid;
+    [SerializeField] private AudioClip punch;
+    [SerializeField] private AudioClip stepL;
+    [SerializeField] private AudioClip stepR;
 
     private bool isAnimationBlocked;
     private bool isRun;
@@ -29,10 +32,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     private List<RaycastHit2D> castCollisions = new();
     private int isInvulnerable = 0;
     private PlayerInput playerInput;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
@@ -200,5 +205,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float GetDistanceToHarmonoid()
     {
         return Vector3.Distance(harmonoid.transform.position, this.GameObject().transform.position);
+    }
+
+    public void PlayPunch()
+    {
+        Debug.Log("punched");
+        audioSource.PlayOneShot(punch);
     }
 }
