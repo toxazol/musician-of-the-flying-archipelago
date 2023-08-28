@@ -6,11 +6,7 @@ using UnityEngine.UI;
 
 public class FixedLooper : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    // [SerializeField] private static int BPM = 120;
-    // [SerializeField] private int maxPPM = (int) (60 * 60 / Time.fixedDeltaTime); // max pulse per minute
-    [SerializeField] private int fpb = 8; // frames per beat // TODO: calculate 
+    [SerializeField] private int fpb = 8; // frames per beat 
     [SerializeField] private int bars = 4;
     [SerializeField] private int noteDivision = 8;
     [SerializeField] private int trackLen;
@@ -25,13 +21,17 @@ public class FixedLooper : MonoBehaviour
     [SerializeField] private bool isPause = false;
     [SerializeField] private bool isHighlighted = false;
     [SerializeField] private Color highColor;
+    [SerializeField] private bool isRhythmGame = false;
+    [SerializeField] private int userFrameDelta = -16;
+    [SerializeField] private int userFrameTolerance = 2;
+    [SerializeField] private float indicationSecs = 0.3f;
+    [SerializeField] private GameObject hitIndicator;
+    [SerializeField] private GameObject targetRow;
     private int frame = 0;
     private int pulse = 0;
-
     private AudioSource audioSource;
     
 
-    
     void Start()
     {
         trackLen = bars * noteDivision; 
@@ -60,7 +60,7 @@ public class FixedLooper : MonoBehaviour
         for(int i = 0; i < trackLen; i++)
         {
             int index = i;
-            var cell = Instantiate(cellPrefab, this.transform);
+            var cell = Instantiate(cellPrefab, targetRow.transform);
             ColorizeCell(cell, i, barLen);
             var toggle = cell.GetComponent<Toggle>();
             notes[i].toggle = toggle;
@@ -108,6 +108,48 @@ public class FixedLooper : MonoBehaviour
     void OnToggleMusic()
     {
         isPause = !isPause;
+    }
+
+    void OnFire()
+    {
+        if(!isRhythmGame)
+            return;
+        
+        int fireFrame = frame + userFrameDelta;
+        
+        int from = fireFrame - userFrameTolerance;
+        int to = fireFrame + userFrameTolerance;
+        for(int i = fireFrame, step = 1; i >= from && i <= to;)
+        {
+            int firePulse = GetPulseFromFrame(i);   
+            if(firePulse >= 0 && notes[firePulse].isActive)
+            {
+                hitIndicator.GetComponent<Image>().color = Color.green;
+                Invoke("StopIndication", indicationSecs);
+                return;
+            }
+            // go one step at a time further from the center
+            i += step;
+            step++; 
+            step*= -1;
+        }
+
+    }
+
+    void StopIndication()
+    {
+        hitIndicator.GetComponent<Image>().color = Color.white;
+    }
+
+    int GetPulseFromFrame(int frame)
+    {
+        if(frame % fpb > 0)
+            return -1;
+
+        int pulses = frame / fpb + 1;
+        int curPulse = pulses % trackLen;
+
+        return curPulse; 
     }
 
 }
