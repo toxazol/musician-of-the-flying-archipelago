@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 {
     [SerializeField] private DetectionZone detectionZone;
+    [SerializeField] private DetectionZone attackDetectionZone;
     [SerializeField] private float moveForce = 500f;
     [SerializeField] private int attackDamage = 5;
     [SerializeField] private string enemyName = "blob";
@@ -14,10 +15,13 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     Blinking blinking;
     Animator animator;
     Rigidbody2D rb;
+
+    private bool isAttack = false;
     
     private HealthBar healthBar;
     private Health health;
     private DamageDisplay damageDisplay;
+    private SpriteRenderer sr;
 
     private float knockbackPower;
     private int knockbackTicks = 0;
@@ -29,6 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         blinking = GetComponent<Blinking>();
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
+        sr = GetComponent<SpriteRenderer>();
         healthBar = GetComponentInChildren<HealthBar>();
         damageDisplay = GetComponentInChildren<DamageDisplay>();
         healthBar.Invoke("setFullHp", 0f);
@@ -49,11 +54,21 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         if (animator.IsDestroyed() || isDummy) return;
         if (detectionZone.detectedObjs.Count == 0)
         {
-            animator.SetBool("isMoving", false);
+            PlayBlockable("idle");
             return;
         }
 
-        animator.SetBool("isMoving", true);
+        TurnToDetected(detectionZone.detectedObjs[0]);
+        
+        if (attackDetectionZone.detectedObjs.Count > 0)
+        {
+            foreach (Collider2D detectedObj in attackDetectionZone.detectedObjs)
+            {
+                Attack(detectedObj.gameObject);
+            }
+        }
+
+        PlayBlockable("move");
 
         if (knockbackPower > 0f && knockbackTicks < 10)
         {
@@ -70,6 +85,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         }
     }
 
+    private void TurnToDetected(Collider2D detectedObject)
+    {
+        sr.flipX = (detectedObject.transform.position - transform.position).normalized.x < 0;
+    }
+
     public void OnKnockback(float knockbackPower)
     {
         this.knockbackPower = knockbackPower;
@@ -77,15 +97,45 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player" || isDummy) return;
-        IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
-        damageableObj.OnHit(attackDamage);
+        // if (collision.gameObject.tag != "Player" || isDummy) return;
+        // IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
+        // damageableObj.OnHit(attackDamage);
+    }
+
+    public void Attack(GameObject target)
+    {
+        if (!isAttack)
+        {
+            Debug.Log("start attack");
+            PlayBlockable("attack");
+            target.GetComponent<IDamageable>().OnHit(attackDamage);
+            isAttack = true;
+        }
+    }
+
+    private void PlayBlockable(string animation)
+    {
+        PlayBlockable(animation, false);
+    }
+    
+    private void PlayBlockable(string animation, bool block)
+    {
+        if (!isAttack)
+        {
+            animator.Play(animation);
+            isAttack = block;
+        }
+    }
+    public void EndAttack()
+    {
+        isAttack = false;
     }
 
     public void OnHit(int damage)
     {
         var calculatedDamage = damage - armor/2;
         health.Hit(calculatedDamage);
+        PlayBlockable("damage", true);
         damageDisplay.AddDamage(calculatedDamage);
         healthBar.updateHp(health);
 
@@ -101,16 +151,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void OnDie()
     {
-        blinking.Blink(false);
-        Destroy(rb);
-        Destroy(animator);
-        Destroy(detectionZone);
-        Destroy(GetComponent<Ysort>());
-        Invoke("DestroyEnemy", 0.7f);
+        animator.Play("death");
+        // blinking.Blink(false);
+        isDummy = true;
     }
 
     private void DestroyEnemy()
     {
+        Debug.Log("destroy death");
         Destroy(gameObject);
     }
 }

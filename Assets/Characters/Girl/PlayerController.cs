@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IDamageable
@@ -18,11 +16,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     [SerializeField] private GameObject harmonoid;
 
+    private bool isAnimationBlocked;
+    private bool isRun;
+    private bool isAttack = false;
+    private int attackAnimationCounter = 0;
+
     private Vector2 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
     private Health health;
-    private SpriteRenderer spriteRenderer;
     private Blinking blinking;
     private List<RaycastHit2D> castCollisions = new();
     private int isInvulnerable = 0;
@@ -34,12 +36,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         blinking = GetComponent<Blinking>();
         playerInput = GetComponent<PlayerInput>();
         playerInput.enabled = true;
         hpUI.fillAmount = health.GetHealthPercentage();
-        EndAttack();
+        attackZone.transform.localScale = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -53,27 +54,35 @@ public class PlayerController : MonoBehaviour, IDamageable
             || TryMove(new Vector2(moveInput.x, 0)) // for player not to get stuck
             || TryMove(new Vector2(0, moveInput.y))) // when moving diagonally
         {
-            if (moveInput.x > 0)
-            {
-                MoveAnimation(true);
-            }
-            else
-            {
-                MoveAnimation(false);
-            }
+            isRun = true;
+            PlayBlockable("run");
+            animator.SetFloat("xMove", moveInput.x);
+            animator.SetFloat("yMove", moveInput.y);
         }
         else
         {
-            StopMoveAnimation();
+            PlayBlockable("idle");
+            isRun = false;
         }
     }
 
-    bool isTurnedLeft()
+    void ActivateDamageZone()
     {
-        var state = animator.GetCurrentAnimatorStateInfo(0);
-        return state.IsName("idle_left")
-               || state.IsName("run_left")
-               || state.IsName("attack_left");
+        float x = animator.GetFloat("xMove");
+        float y = animator.GetFloat("yMove");
+        Debug.Log(y);
+        if (y != 0)
+        {
+            attackZone.transform.Rotate(y < 0 ? 160 : 0, 0, 90);
+            attackZone.transform.localPosition = new Vector3(0.75f, y < 0 ? 0 : 0.5f, 0);
+        }
+        else
+        {
+            attackZone.transform.localRotation = new Quaternion(0, 0, 0, 1);
+            attackZone.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        attackZone.transform.localScale = new Vector3(x < 0 ? -1 : 1, 1, 1);
     }
 
     bool TryMove(Vector2 dir)
@@ -92,21 +101,21 @@ public class PlayerController : MonoBehaviour, IDamageable
         return true;
     }
 
-    private void MoveAnimation(bool isRight)
-    {
-        animator.SetBool("isMovingR", isRight);
-        animator.SetBool("isMovingL", !isRight);
-    }
-
-    private void StopMoveAnimation()
-    {
-        animator.SetBool("isMovingR", false);
-        animator.SetBool("isMovingL", false);
-    }
-
     void OnMove(InputValue moveVal)
     {
         moveInput = moveVal.Get<Vector2>();
+    }
+
+    private void PlayBlockable(string name)
+    {
+        if (attackAnimationCounter == 0)
+        {
+            isAnimationBlocked = false;
+        }
+        if (!isAnimationBlocked)
+        {
+            animator.Play(name);
+        }
     }
 
     public void OnHit(int damage)
@@ -135,15 +144,46 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void OnRespawn()
     {
-        Debug.Log("Respawned");
         levelManager.ReloadCurentScene();
     }
 
     void OnFire()
     {
-        attackZone.transform.localScale = new Vector3(isTurnedLeft() ? -1 : 1, 1, 1);
-        animator.SetTrigger("Attack");
-        Invoke("EndAttack", 0.3f);
+        if (attackAnimationCounter == 0)
+        {
+            isAnimationBlocked = false;
+        }
+        
+        if (!isAnimationBlocked)
+        {
+            ActivateDamageZone();
+            isAttack = true;
+            if (isRun)
+            {
+                PlayBlockable("attack_on_move");
+            }
+            else
+            {
+                PlayBlockable("attack");
+            }
+
+            isAnimationBlocked = true;
+            attackAnimationCounter++;
+            Invoke("DeacreaceAttackCounter", 1f);
+        }
+    }
+
+    private void DeacreaceAttackCounter()
+    {
+        attackAnimationCounter--;
+    }
+
+    public void OnAttackAnimationExit()
+    {
+        attackZone.transform.localRotation = new Quaternion(0, 0, 0, 1);
+        attackZone.transform.localScale = new Vector3(0, 0, 0);
+        isAnimationBlocked = false;
+        isAttack = false;
     }
 
     private void StartInvulnerability()
@@ -151,15 +191,10 @@ public class PlayerController : MonoBehaviour, IDamageable
         isInvulnerable++;
         Invoke("CancelInvulnerability", invulnerabilityTime);
     }
-    
+
     private void CancelInvulnerability()
     {
         isInvulnerable--;
-    }
-
-    private void EndAttack()
-    {
-        attackZone.transform.localScale = new Vector3(0, 0, 0);
     }
 
     public float GetDistanceToHarmonoid()
