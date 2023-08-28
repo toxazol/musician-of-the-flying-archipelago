@@ -102,14 +102,17 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (collisionCount > 0) return false;
 
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(isStepLeft ? stepL : stepR);
+            isStepLeft = !isStepLeft;
+        }
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * dir);
         return true;
     }
 
     void OnMove(InputValue moveVal)
     {
-        audioSource.PlayOneShot(isStepLeft ? stepL : stepR);
-        isStepLeft = !isStepLeft;
         moveInput = moveVal.Get<Vector2>();
     }
 

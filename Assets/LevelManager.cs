@@ -47,7 +47,6 @@ public class LevelManager : MonoBehaviour
     public void OnCalibration()
     {
         Time.timeScale = 1.0f;
-        gameOverlay.SetActive(false);
         menuUI.SetActive(false);
         calibrationUI.SetActive(true);
     }

@@ -15,12 +15,16 @@ public class FriendController : MonoBehaviour
     [SerializeField] private float collisionOffset = 0.05f;
     [SerializeField] private bool isFollow = true;
     [SerializeField] private Image gui;
+    [SerializeField] private AudioClip stepL;
+    [SerializeField] private AudioClip stepR;
+    private AudioSource audioSource;
 
     private Vector2 moveInput; 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
     private List<RaycastHit2D> castCollisions = new();
+    private bool isStepLeft = false;
     
 
     // Start is called before the first frame update
@@ -29,6 +33,7 @@ public class FriendController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -75,6 +80,11 @@ public class FriendController : MonoBehaviour
         
         if(collisionCount > 0) return false;
 
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(isStepLeft ? stepL : stepR);
+            isStepLeft = !isStepLeft;
+        }
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * dir);
         return true;
     }
