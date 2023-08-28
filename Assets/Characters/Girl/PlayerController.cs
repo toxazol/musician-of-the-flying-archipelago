@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool isRun;
     private bool isAttack = false;
     private int attackAnimationCounter = 0;
+    private bool isStepLeft = false;
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -75,7 +76,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         float x = animator.GetFloat("xMove");
         float y = animator.GetFloat("yMove");
-        Debug.Log(y);
         if (y != 0)
         {
             attackZone.transform.Rotate(y < 0 ? 160 : 0, 0, 90);
@@ -108,6 +108,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void OnMove(InputValue moveVal)
     {
+        audioSource.PlayOneShot(isStepLeft ? stepL : stepR);
+        isStepLeft = !isStepLeft;
         moveInput = moveVal.Get<Vector2>();
     }
 
@@ -154,6 +156,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void OnFire()
     {
+        audioSource.PlayOneShot(punch);
+
         if (attackAnimationCounter == 0)
         {
             isAnimationBlocked = false;
@@ -207,9 +211,4 @@ public class PlayerController : MonoBehaviour, IDamageable
         return Vector3.Distance(harmonoid.transform.position, this.GameObject().transform.position);
     }
 
-    public void PlayPunch()
-    {
-        Debug.Log("punched");
-        audioSource.PlayOneShot(punch);
-    }
 }
