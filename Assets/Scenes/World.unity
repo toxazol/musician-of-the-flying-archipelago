@@ -1021,6 +1021,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4658419419853635215, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
   m_PrefabInstance: {fileID: 133004721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &525409019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525409021}
+  - component: {fileID: 525409022}
+  m_Layer: 0
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &525409021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525409019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1652334334}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &525409022
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525409019}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -12.047631, y: -8.119425}
+  - {x: -6.223072, y: -8.625554}
+  - {x: -0.4021585, y: -8.7509365}
+  - {x: 11.582884, y: 1.2323418}
+  - {x: 10.828634, y: 8.7591095}
+  - {x: 5.845983, y: 29.946596}
+  - {x: -7.9955726, y: 27.345306}
+  - {x: -11.485856, y: 16.204483}
+  - {x: -13.154129, y: -1.9193668}
+  - {x: -12.32543, y: -8.158062}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &619267747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17519,6 +17600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 525409021}
   - {fileID: 4367967}
   - {fileID: 69766413}
   - {fileID: 64006522562289128}
@@ -20402,7 +20484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 531375870188764883, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 531375870188764883, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20442,7 +20524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849138517254486939, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1849138517254486939, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20458,7 +20540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20474,7 +20556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20490,7 +20572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519708548232460458, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2519708548232460458, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20506,7 +20588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20522,7 +20604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20578,7 +20660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4329352795602085785, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4329352795602085785, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20626,7 +20708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20734,7 +20816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20750,7 +20832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20782,7 +20864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822278542762405932, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8822278542762405932, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20798,7 +20880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869609211296649199, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8869609211296649199, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
