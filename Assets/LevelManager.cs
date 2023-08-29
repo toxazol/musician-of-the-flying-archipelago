@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverlay;
     [SerializeField] private GameObject deathUI;
+    [SerializeField] private GameObject endUI;
     [SerializeField] private GameObject calibrationUI;
     [SerializeField] private GameObject menuUI;
     [SerializeField] private GameObject craftUI;
@@ -61,5 +62,10 @@ public class LevelManager : MonoBehaviour
     {
         gameOverlay.SetActive(false);
         deathUI.SetActive(true);
+    }
+    public void LoadEndMenu()
+    {
+        gameOverlay.SetActive(false);
+        endUI.SetActive(true);
     }
 }

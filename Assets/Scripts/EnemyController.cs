@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     [SerializeField] private float knockbackResist = 0f;
     [SerializeField] private int armor = 0;
     [SerializeField] private bool isDummy = false;
+    [SerializeField] private LevelManager levelManager;
 
     Blinking blinking;
     Animator animator;
@@ -150,6 +152,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void OnDie()
     {
+        var countEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (countEnemies == 1)
+        {
+            levelManager.LoadEndMenu();
+        }
         animator.Play("death");
         // blinking.Blink(false);
         isDummy = true;

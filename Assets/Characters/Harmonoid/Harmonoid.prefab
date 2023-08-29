@@ -45,22 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 671732002eb141549b7a101f38d5424d, type: 3}
   tickEvery: 4
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 1
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
+  isRhythmGame: 0
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &8335006339077060102
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73,16 +73,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3051bf99819904d488f260adeb09aa19, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
+  Priority: 200
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -132,7 +132,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -202,22 +202,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 13d06bdfc6d28ee459b6c24167f363be, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &2519708548232460458
 AudioSource:
   m_ObjectHideFlags: 0
@@ -230,16 +230,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 53c4d6f89ff721d4b8b815e63fbc7c9a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -289,7 +289,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -393,22 +393,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &1950531760701389293
 AudioSource:
   m_ObjectHideFlags: 0
@@ -421,16 +421,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cd46fb65a1989824cb172070dbb8915c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -480,7 +480,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -550,22 +550,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: f54c77fe743960c40a32a38d3f18ee2a, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
+  isRhythmGame: 1
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &8604629750945102888
 AudioSource:
   m_ObjectHideFlags: 0
@@ -578,16 +578,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e33b4c7d08356694ca7b3bf58ab665d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -637,7 +637,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -707,22 +707,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &4329352795602085785
 AudioSource:
   m_ObjectHideFlags: 0
@@ -735,16 +735,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c5f632bcde7b1df4b863787166bd1185, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -794,7 +794,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -864,22 +864,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &3614168056742389639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -892,16 +892,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63a5fc596c942f34eadcafb52a9c8d8e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -951,7 +951,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1021,22 +1021,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &8869609211296649199
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1049,16 +1049,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 263db948ef55b8c4cad681b6c4380cef, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1108,7 +1108,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1178,22 +1178,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &531375870188764883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1206,16 +1206,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 69649c525c3bed3499c669ec57954b20, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1265,7 +1265,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1305,6 +1305,7 @@ GameObject:
   - component: {fileID: 4251880683540635640}
   - component: {fileID: 8715006706196295109}
   - component: {fileID: 6415296702145301590}
+  - component: {fileID: 8025807960216341466}
   m_Layer: 0
   m_Name: Harmonoid
   m_TagString: Friend
@@ -1504,7 +1505,9 @@ MonoBehaviour:
     maxNormalAngle: 0
   collisionOffset: 0.05
   isFollow: 1
-  gui: {fileID: 0}
+  followOffGui: {fileID: 0}
+  stepL: {fileID: 8300000, guid: b8ee560ec33f22647878ba7461eb6ca9, type: 3}
+  stepR: {fileID: 8300000, guid: d91dc1cc523b325448ef5cefbc72f1fb, type: 3}
 --- !u!114 &6415296702145301590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,81 +1523,20 @@ MonoBehaviour:
   sortingOrderBase: 5000
   precisionMul: 100
   onceOnly: 0
---- !u!1 &5236615232101039356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4376149892152169036}
-  - component: {fileID: 3752477578858045403}
-  - component: {fileID: 2163002723188075642}
-  m_Layer: 5
-  m_Name: C
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4376149892152169036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5236615232101039356}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5660894749374077517}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3752477578858045403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5236615232101039356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpb: 8
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
-  tickEvery: 0
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-  isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  settings: {fileID: 5164434256037318809}
---- !u!82 &2163002723188075642
+--- !u!82 &8025807960216341466
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5236615232101039356}
+  m_GameObject: {fileID: 4865328277028110624}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 63ae862c6ff201c4c955a1a1cde00e74, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1602,7 +1544,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1677,7 +1619,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &5850508416503849262
+--- !u!1 &5236615232101039356
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1685,23 +1627,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4305487368383285333}
-  - component: {fileID: 7021361949797814831}
-  - component: {fileID: 2563022392307147534}
+  - component: {fileID: 4376149892152169036}
+  - component: {fileID: 3752477578858045403}
+  - component: {fileID: 2163002723188075642}
   m_Layer: 5
-  m_Name: E
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4305487368383285333
+--- !u!4 &4376149892152169036
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850508416503849262}
+  m_GameObject: {fileID: 5236615232101039356}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1710,56 +1652,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5660894749374077517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7021361949797814831
+--- !u!114 &3752477578858045403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850508416503849262}
+  m_GameObject: {fileID: 5236615232101039356}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
+  highColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
---- !u!82 &2563022392307147534
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!82 &2163002723188075642
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850508416503849262}
+  m_GameObject: {fileID: 5236615232101039356}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91e9b11df8ec77e4b9566cbbe6901fcb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 63ae862c6ff201c4c955a1a1cde00e74, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1809,7 +1751,164 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &5850508416503849262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4305487368383285333}
+  - component: {fileID: 7021361949797814831}
+  - component: {fileID: 2563022392307147534}
+  m_Layer: 5
+  m_Name: E
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4305487368383285333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850508416503849262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5660894749374077517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7021361949797814831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850508416503849262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bars: 4
+  noteDivision: 8
+  trackLen: 0
+  cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
+  tickEvery: 0
+  isPause: 1
+  isHighlighted: 0
+  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
+  isRhythmGame: 0
+  hitIndicator: {fileID: 0}
+  targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
+  settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!82 &2563022392307147534
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850508416503849262}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 91e9b11df8ec77e4b9566cbbe6901fcb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 7
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
       value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1951,22 +2050,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &8822278542762405932
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1979,16 +2078,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce038d3d5eaef9043b8d4a83b542223c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2038,7 +2137,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2108,22 +2207,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &5468545827613757072
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2136,16 +2235,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c9f0fd6176f927e4ba96616bb010962a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2195,7 +2294,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2265,22 +2364,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
   bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
   tickEvery: 0
-  isPause: 0
+  isPause: 1
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
   isRhythmGame: 0
-  userFrameDelta: -16
-  userFrameTolerance: 2
-  indicationSecs: 0.3
   hitIndicator: {fileID: 0}
   targetRow: {fileID: 0}
+  playerAttack: {fileID: 0}
+  targetHitRow: {fileID: 0}
   settings: {fileID: 5164434256037318809}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &1849138517254486939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2293,16 +2392,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 22e8dafbc01280c4fae99e087b5a1f34, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2352,7 +2451,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2430,7 +2529,10 @@ MonoBehaviour:
   trackLen: 0
   isHighlighted: 0
   highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  userFrameDelta: -16
-  userFrameTolerance: 2
+  userFrameDelta: -7
+  userFrameTolerance: 3
   indicationSecs: 0.3
+  buffSecs: 0.3
   hitIndicator: {fileID: 0}
+  playerAttack: {fileID: 0}
+  damageX: 5
