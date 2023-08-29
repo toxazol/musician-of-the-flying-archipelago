@@ -152,11 +152,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void OnDie()
     {
-        var countEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (countEnemies == 1)
-        {
-            levelManager.LoadEndMenu();
-        }
         animator.Play("death");
         // blinking.Blink(false);
         isDummy = true;
@@ -164,6 +159,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     private void DestroyEnemy()
     {
+        var countEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (countEnemies == 1)
+        {
+            levelManager.LoadEndMenu();
+        }
         Destroy(gameObject);
     }
 }

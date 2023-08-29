@@ -335,6 +335,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8354467693018776853, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: m_Radius
+      value: 0.5091641
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354467693018776853, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.022060037
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354467693018776853, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.027574778
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17409,10 +17421,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.000747105
+    x: 0
     y: 0
-    width: 0.9981323
-    height: 0.998672
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -21414,7 +21426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184438080768356726, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: attackDamage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8408653906253658920, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_Name
