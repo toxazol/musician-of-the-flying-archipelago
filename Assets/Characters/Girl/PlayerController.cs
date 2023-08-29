@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -51,6 +52,18 @@ public class PlayerController : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        UpdateCraftTooltip();
+        
+    }
+
+    void UpdateCraftTooltip()
+    {
+        if(GetDistanceToHarmonoid() > levelManager.craftOpenRange)
+        {
+            harmonoid.transform.Find("CraftTooltip").gameObject.SetActive(false);
+        } else {
+            harmonoid.transform.Find("CraftTooltip").gameObject.SetActive(true);
+        }
     }
 
     private void FixedUpdate()

@@ -37,7 +37,7 @@ public class FixedLooper : MonoBehaviour
     {
         noteDivision = settings.noteDivision;
         isHighlighted = settings.isHighlighted;
-        highColor = settings.highColor;
+        // highColor = settings.highColor;
         hitIndicator = settings.hitIndicator;
         playerAttack = settings.playerAttack;
 
@@ -177,12 +177,12 @@ public class FixedLooper : MonoBehaviour
 
     void BuffDamamge()
     {
-        playerAttack.attackDamage *= settings.damageX;
+        playerAttack.attackDamage = settings.damageRhythm;
         Invoke("StopBuffDamamge", settings.buffSecs);
     }
     void StopBuffDamamge()
     {
-        playerAttack.attackDamage /= settings.damageX;
+        playerAttack.attackDamage = settings.damageDefault;
     }
 
     void ShowHit()

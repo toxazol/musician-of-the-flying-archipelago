@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject looper;
+    public float craftOpenRange = 3.0f;
     
     private  PlayerInput playerInput;
     private bool isPaused = false;
@@ -56,12 +57,18 @@ public class LevelManager : MonoBehaviour
     }
     public void OnCraft()
     {
-        if (!isCraft && player.GetComponent<PlayerController>().GetDistanceToHarmonoid() > 3.0f)
+        if (!isCraft && CheckPlayerFar())
             return;
 
         isCraft = !isCraft;
         craftUI.SetActive(isCraft);
         playerInput.SwitchCurrentActionMap(isCraft ? "Craft" : "Player");
+    }
+
+    bool CheckPlayerFar()
+    {
+        var playerControl = player.GetComponent<PlayerController>();
+        return playerControl.GetDistanceToHarmonoid() > craftOpenRange;
     }
     public void LoadDeathMenu()
     {

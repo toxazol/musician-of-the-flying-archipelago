@@ -16,6 +16,7 @@ public class LooperSettings : MonoBehaviour
     public float buffSecs = 0.3f;
     public GameObject hitIndicator;
     public AttackZone playerAttack;
-    public int damageX = 5;
+    public int damageRhythm = 20;
+    public int damageDefault = 2;
 
 }

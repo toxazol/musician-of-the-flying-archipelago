@@ -237,7 +237,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 7
 --- !u!114 &8831855574008108706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4247334225223e4b87ede234a258875, type: 2}
   m_sharedMaterial: {fileID: -7067039070414232108, guid: a4247334225223e4b87ede234a258875, type: 2}
