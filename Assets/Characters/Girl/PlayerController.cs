@@ -212,4 +212,9 @@ public class PlayerController : MonoBehaviour, IDamageable
         return Vector3.Distance(harmonoid.transform.position, this.GameObject().transform.position);
     }
 
+    public void BuffDamamge()
+    {
+        
+    }
+
 }

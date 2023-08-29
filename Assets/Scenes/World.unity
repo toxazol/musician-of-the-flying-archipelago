@@ -15925,7 +15925,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.377867
+  orthographic size: 11.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17949,11 +17949,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6543124944244942870}
-  - {fileID: 3027118412627548814}
-  - {fileID: 706191809699760312}
-  - {fileID: 1050891382376685223}
   - {fileID: 5511624595392342728}
+  - {fileID: 1050891382376685223}
+  - {fileID: 706191809699760312}
+  - {fileID: 3027118412627548814}
+  - {fileID: 6543124944244942870}
   m_Father: {fileID: 8196853708799914504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18983,7 +18983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 531375870188764883, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 531375870188764883, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19023,7 +19023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849138517254486939, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1849138517254486939, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19039,7 +19039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19055,7 +19055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19071,7 +19071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519708548232460458, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2519708548232460458, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19087,7 +19087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19103,7 +19103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19146,6 +19146,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4107904852536573320}
     - target: {fileID: 3877319640890811276, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: isRhythmGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319640890811276, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: targetHitRow
       value: 
       objectReference: {fileID: 1499215179}
@@ -19155,7 +19159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4329352795602085785, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4329352795602085785, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19186,6 +19190,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9030229985903775757}
     - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: playerAttack
+      value: 
+      objectReference: {fileID: 1740552102}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: userFrameDelta
       value: -7
       objectReference: {fileID: 0}
@@ -19199,7 +19207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19245,6 +19253,14 @@ PrefabInstance:
       propertyPath: targetRow
       value: 
       objectReference: {fileID: 441961604857885024}
+    - target: {fileID: 6132222544114838297, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: isRhythmGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132222544114838297, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: targetHitRow
+      value: 
+      objectReference: {fileID: 1499215179}
     - target: {fileID: 6295129166732655827, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: m_Size.y
       value: 0.64899945
@@ -19318,12 +19334,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2642430811699660487}
     - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: Priority
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8335006339077060102, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19339,7 +19359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19375,7 +19395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822278542762405932, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8822278542762405932, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -19391,7 +19411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8869609211296649199, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8869609211296649199, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: DopplerLevel
@@ -20029,6 +20049,10 @@ PrefabInstance:
     - target: {fileID: 7131832763893257596, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184438080768356726, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: attackDamage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8408653906253658920, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_Name
@@ -20966,11 +20990,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1526183310204332181}
-  - {fileID: 1078083658590322586}
-  - {fileID: 6730264904478753145}
-  - {fileID: 6440458526299482619}
   - {fileID: 9146494767990855207}
+  - {fileID: 6440458526299482619}
+  - {fileID: 6730264904478753145}
+  - {fileID: 1078083658590322586}
+  - {fileID: 1526183310204332181}
   m_Father: {fileID: 8196853708799914504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

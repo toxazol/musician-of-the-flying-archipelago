@@ -13,6 +13,9 @@ public class LooperSettings : MonoBehaviour
     public int userFrameDelta = -16;
     public int userFrameTolerance = 2;
     public float indicationSecs = 0.3f;
+    public float buffSecs = 0.3f;
     public GameObject hitIndicator;
+    public AttackZone playerAttack;
+    public int damageX = 5;
 
 }

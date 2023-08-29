@@ -21,9 +21,9 @@ public class FixedLooper : MonoBehaviour
     [SerializeField] private bool isHighlighted = false;
     [SerializeField] private Color highColor;
     [SerializeField] private bool isRhythmGame = false;
-    [SerializeField] private float indicationSecs = 0.3f;
     [SerializeField] private GameObject hitIndicator;
     [SerializeField] private GameObject targetRow;
+    [SerializeField] private AttackZone playerAttack;
     [SerializeField] private GameObject targetHitRow;
     [SerializeField] private LooperSettings settings;
     [SerializeField] private Color selectedColor;
@@ -38,8 +38,8 @@ public class FixedLooper : MonoBehaviour
         noteDivision = settings.noteDivision;
         isHighlighted = settings.isHighlighted;
         highColor = settings.highColor;
-        indicationSecs = settings.indicationSecs;
         hitIndicator = settings.hitIndicator;
+        playerAttack = settings.playerAttack;
 
         if(isRhythmGame)
         {
@@ -162,8 +162,8 @@ public class FixedLooper : MonoBehaviour
             int firePulse = GetPulseFromFrame(i);   
             if(firePulse >= 0 && notes[firePulse].isActive)
             {
-                hitIndicator.GetComponent<Image>().color = Color.green;
-                Invoke("StopIndication", indicationSecs);
+                BuffDamamge();
+                ShowHit();
                 return;
             }
             // go one step at a time further from the center
@@ -171,6 +171,22 @@ public class FixedLooper : MonoBehaviour
             step *= -1;
             step += step > 0 ? 1 : -1;
         }
+    }
+
+    void BuffDamamge()
+    {
+        playerAttack.attackDamage *= settings.damageX;
+        Invoke("StopBuffDamamge", settings.buffSecs);
+    }
+    void StopBuffDamamge()
+    {
+        playerAttack.attackDamage /= settings.damageX;
+    }
+
+    void ShowHit()
+    {
+        hitIndicator.GetComponent<Image>().color = Color.green;
+        Invoke("StopIndication", settings.indicationSecs);
     }
 
     void StopIndication()
