@@ -15622,7 +15622,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.377867
+  orthographic size: 17.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17605,7 +17605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -18712,6 +18712,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950531760701389293, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
       objectReference: {fileID: 0}
@@ -18720,6 +18724,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163002723188075642, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
       objectReference: {fileID: 0}
@@ -18736,12 +18744,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2563022392307147534, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3614168056742389639, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
@@ -18815,6 +18831,10 @@ PrefabInstance:
       propertyPath: playerAttack
       value: 
       objectReference: {fileID: 1740552102}
+    - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
@@ -18908,9 +18928,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: Priority
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 074203ea84763f14bbca76791457e856, type: 3}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
@@ -21230,7 +21262,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
