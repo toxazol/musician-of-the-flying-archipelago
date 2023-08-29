@@ -43,10 +43,12 @@ public class FixedLooper : MonoBehaviour
 
         if(isRhythmGame)
         {
-            selectedColor = cellPrefab.transform.Find("Selected")
-                .GetComponent<Image>().color;
-            initHitRowColor = targetHitRow.transform.GetChild(0)
-                .GetComponent<Image>().color;
+            // selectedColor = cellPrefab.transform.Find("Selected")
+            //     .GetComponent<Image>().color;
+            // initHitRowColor = targetHitRow.transform.GetChild(0)
+            //     .GetComponent<Image>().color;
+            selectedColor = Color.red;
+            initHitRowColor = Color.white;
         }
 
         trackLen = bars * noteDivision; 

@@ -14,7 +14,7 @@ public class FriendController : MonoBehaviour
     [SerializeField] private ContactFilter2D moveFilter;
     [SerializeField] private float collisionOffset = 0.05f;
     [SerializeField] private bool isFollow = true;
-    [SerializeField] private Image gui;
+    [SerializeField] private GameObject followOffGui;
     [SerializeField] private AudioClip stepL;
     [SerializeField] private AudioClip stepR;
     private AudioSource audioSource;
@@ -92,7 +92,7 @@ public class FriendController : MonoBehaviour
     public void OnWhistle()
     {
         isFollow = !isFollow;
-        gui.color = isFollow ? Color.white : Color.black;
+        followOffGui.SetActive(!isFollow);
     }
 
 }
