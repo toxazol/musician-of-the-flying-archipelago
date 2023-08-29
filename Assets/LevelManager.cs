@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject menuUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject looper;
     
     private  PlayerInput playerInput;
     private bool isPaused = false;
@@ -43,12 +44,15 @@ public class LevelManager : MonoBehaviour
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0.0f : 1.0f;
         menuUI.SetActive(isPaused);
+        var targetMap = isCraft ? "Craft" : "Player";
+        playerInput.SwitchCurrentActionMap(isPaused ? "Menu" : targetMap);
     }
     public void OnCalibration()
     {
         Time.timeScale = 1.0f;
         menuUI.SetActive(false);
         calibrationUI.SetActive(true);
+        // SwitchMenuInput();
     }
     public void OnCraft()
     {
@@ -57,15 +61,19 @@ public class LevelManager : MonoBehaviour
 
         isCraft = !isCraft;
         craftUI.SetActive(isCraft);
+        playerInput.SwitchCurrentActionMap(isCraft ? "Craft" : "Player");
     }
     public void LoadDeathMenu()
     {
         gameOverlay.SetActive(false);
+        looper.SetActive(false);
         deathUI.SetActive(true);
     }
     public void LoadEndMenu()
     {
         gameOverlay.SetActive(false);
+        looper.SetActive(false);
         endUI.SetActive(true);
+        playerInput.SwitchCurrentActionMap("Menu");
     }
 }
