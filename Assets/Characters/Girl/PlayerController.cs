@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip punch;
     [SerializeField] private AudioClip stepL;
     [SerializeField] private AudioClip stepR;
+    [SerializeField] private PlayerInput playerInput;
 
     private bool isAnimationBlocked;
     private bool isRun;
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Blinking blinking;
     private List<RaycastHit2D> castCollisions = new();
     private int isInvulnerable = 0;
-    private PlayerInput playerInput;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
         blinking = GetComponent<Blinking>();
-        playerInput = GetComponent<PlayerInput>();
         playerInput.enabled = true;
         hpUI.fillAmount = health.GetHealthPercentage();
         attackZone.transform.localScale = new Vector3(0, 0, 0);
@@ -144,7 +143,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnDie()
     {
-        Debug.Log("You are dead");
         animator.SetBool("isDead", true);
         animator.SetTrigger("dead");
 

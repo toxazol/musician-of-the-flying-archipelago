@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class FixedLooper : MonoBehaviour
 {
-    [SerializeField] private int fpb = 8; // frames per beat 
     [SerializeField] private int bars = 4;
     [SerializeField] private int noteDivision = 8;
     [SerializeField] private int trackLen;
@@ -22,12 +21,13 @@ public class FixedLooper : MonoBehaviour
     [SerializeField] private bool isHighlighted = false;
     [SerializeField] private Color highColor;
     [SerializeField] private bool isRhythmGame = false;
-    [SerializeField] private int userFrameDelta = -16;
-    [SerializeField] private int userFrameTolerance = 2;
     [SerializeField] private float indicationSecs = 0.3f;
     [SerializeField] private GameObject hitIndicator;
     [SerializeField] private GameObject targetRow;
+    [SerializeField] private GameObject targetHitRow;
     [SerializeField] private LooperSettings settings;
+    [SerializeField] private Color selectedColor;
+    [SerializeField] private Color initHitRowColor;
     private int frame = 0;
     private int pulse = 0;
     private AudioSource audioSource;
@@ -40,6 +40,14 @@ public class FixedLooper : MonoBehaviour
         highColor = settings.highColor;
         indicationSecs = settings.indicationSecs;
         hitIndicator = settings.hitIndicator;
+
+        if(isRhythmGame)
+        {
+            selectedColor = cellPrefab.transform.Find("Selected")
+                .GetComponent<Image>().color;
+            initHitRowColor = targetHitRow.transform.GetChild(0)
+                .GetComponent<Image>().color;
+        }
 
         trackLen = bars * noteDivision; 
         notes = new Note[trackLen];
@@ -98,10 +106,34 @@ public class FixedLooper : MonoBehaviour
 
         MoveCaret();
 
-        if(frame % settings.fpb == 0 && notes[pulse++].isActive)
-            audioSource.Play();
+        if(frame % settings.fpb == 0)
+        {
+            if(isRhythmGame)
+                UpdateHitRow();
+            if(notes[pulse].isActive)
+                audioSource.Play();
+            pulse++;
+        }
+            
         frame++;
     }
+
+    void UpdateHitRow()
+    {
+        int i = pulse;
+        foreach (Transform child in targetHitRow.transform)
+        {
+            var targetChild = child.gameObject.GetComponent<Image>();
+            if(!notes[i++].isActive)
+                targetChild.color = initHitRowColor;
+            else
+                targetChild.color = selectedColor;
+
+            if(i >= trackLen)
+                i = 0;
+        }
+    }
+
 
     void MoveCaret()
     {
@@ -136,8 +168,8 @@ public class FixedLooper : MonoBehaviour
             }
             // go one step at a time further from the center
             i += step;
-            step++; 
             step *= -1;
+            step += step > 0 ? 1 : -1;
         }
     }
 

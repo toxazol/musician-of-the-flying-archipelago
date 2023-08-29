@@ -13,8 +13,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject menuUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
-
-    private PlayerInput playerInput;
+    
+    private  PlayerInput playerInput;
     private bool isPaused = false;
     private bool isCraft = false;
 
@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
         menuUI.SetActive(false);
         craftUI.SetActive(false);
 
-        playerInput = player.GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
     }
     public void ReloadCurentScene()
     {
@@ -41,7 +41,6 @@ public class LevelManager : MonoBehaviour
     {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0.0f : 1.0f;
-        playerInput.enabled = !isPaused;
         menuUI.SetActive(isPaused);
     }
     public void OnCalibration()
@@ -56,7 +55,6 @@ public class LevelManager : MonoBehaviour
             return;
 
         isCraft = !isCraft;
-        playerInput.enabled = !isCraft;
         craftUI.SetActive(isCraft);
     }
     public void LoadDeathMenu()

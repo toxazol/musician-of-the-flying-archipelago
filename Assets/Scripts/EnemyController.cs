@@ -106,7 +106,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     {
         if (!isAttack)
         {
-            Debug.Log("start attack");
             PlayBlockable("attack");
             target.GetComponent<IDamageable>().OnHit(attackDamage);
             isAttack = true;
@@ -158,7 +157,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     private void DestroyEnemy()
     {
-        Debug.Log("destroy death");
         Destroy(gameObject);
     }
 }
