@@ -1,8 +1,8 @@
-using System.Diagnostics;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
+public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
 {
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private DetectionZone attackDetectionZone;
@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     [SerializeField] private string enemyName = "blob";
     [SerializeField] private float knockbackResist = 0f;
     [SerializeField] private int armor = 0;
+    [SerializeField] private int fallGravityScale = 10;
     [SerializeField] private bool isDummy = false;
     [SerializeField] private LevelManager levelManager;
 
@@ -130,6 +131,16 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public void EndAttack()
     {
         isAttack = false;
+    }
+
+    public void OnFall(EdgeCollider2D border)
+    {
+        rb.gravityScale = fallGravityScale;
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        // var downRay = gameObject.AddComponent<EdgeCollider2D>();
+        // var blobPoint = new Vector2(transform.position.x, transform.position.y);
+        // var downPoint = new Vector2(blobPoint.x, blobPoint.y-1000000);
+        // downRay.SetPoints(new List<Vector2>{blobPoint, downPoint});
     }
 
     public void OnHit(int damage)

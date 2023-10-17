@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6424017307986852793}
   - component: {fileID: 6367078076529914612}
   - component: {fileID: 3204751240821632963}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CurrentHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 193065513603880714}
   - component: {fileID: 8354467693018776853}
   - component: {fileID: 3809187329050044071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7714641841357759980}
   - component: {fileID: 4822173932147024129}
   - component: {fileID: 8831855574008108706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 3416842333163638430}
   - component: {fileID: 6543538463946995017}
   - component: {fileID: 2470678446432517789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 2894995460015937907}
   - component: {fileID: 2843033203873061604}
   - component: {fileID: 660693877201097731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HornyBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 8007665759971350732}
   - component: {fileID: 6241729842966737084}
   - component: {fileID: 3582717197142933580}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 5276258904746611022}
   - component: {fileID: 7836607469954008046}
   - component: {fileID: 5421302722818280850}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 1633931581949173762}
   - component: {fileID: 955055606980391305}
   - component: {fileID: 4878005057653506245}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
