@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -178,11 +175,13 @@ public class FixedLooper : MonoBehaviour
     void BuffDamamge()
     {
         playerAttack.attackDamage = settings.damageRhythm;
+        playerAttack.knockbackPower = settings.knockBackRhythm;
         Invoke("StopBuffDamamge", settings.buffSecs);
     }
     void StopBuffDamamge()
     {
         playerAttack.attackDamage = settings.damageDefault;
+        playerAttack.knockbackPower = settings.knockBackDefault;
     }
 
     void ShowHit()

@@ -22,10 +22,10 @@ public class DamageDisplay : MonoBehaviour
 
         DisplayDamage(true);
         animator.SetTrigger("Combo");
-        Invoke("DecreaceCounter", 0.8f);
+        Invoke("DecreaseCounter", 0.8f);
     }
 
-    private void DecreaceCounter()
+    private void DecreaseCounter()
     {
         iterations--;
         if (iterations < 1)

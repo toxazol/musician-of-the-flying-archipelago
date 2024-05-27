@@ -18,5 +18,7 @@ public class LooperSettings : MonoBehaviour
     public AttackZone playerAttack;
     public int damageRhythm = 20;
     public int damageDefault = 2;
+    public float knockBackRhythm = 6000f;
+    public float knockBackDefault = 1000f;
 
 }

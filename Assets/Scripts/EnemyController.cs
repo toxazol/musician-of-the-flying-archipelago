@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
 
         if (knockbackPower > 0f && knockbackTicks < 10)
         {
-            var dir = (-(detectionZone.detectedObjs[0].transform.position - transform.position).normalized);
+            var dir = -(detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
             rb.AddForce((knockbackPower - knockbackResist) * Time.fixedDeltaTime * dir);
             knockbackTicks++;
         }
@@ -96,13 +96,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
     public void OnKnockback(float knockbackPower)
     {
         this.knockbackPower = knockbackPower;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // if (collision.gameObject.tag != "Player" || isDummy) return;
-        // IDamageable damageableObj = collision.collider.GetComponent<IDamageable>();
-        // damageableObj.OnHit(attackDamage);
     }
 
     public void Attack(GameObject target)
@@ -137,10 +130,9 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
     {
         rb.gravityScale = fallGravityScale;
         gameObject.GetComponent<Collider2D>().enabled = false;
-        // var downRay = gameObject.AddComponent<EdgeCollider2D>();
-        // var blobPoint = new Vector2(transform.position.x, transform.position.y);
-        // var downPoint = new Vector2(blobPoint.x, blobPoint.y-1000000);
-        // downRay.SetPoints(new List<Vector2>{blobPoint, downPoint});
+        if(rb.velocity.y <= 0) return;
+        // enemy falls behing the island if hit upwards
+        sr.sortingLayerName = "Background";
     }
 
     public void OnHit(int damage)

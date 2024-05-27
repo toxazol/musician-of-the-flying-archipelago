@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368d35cc1d824434ba75664b9e1cab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
+  attackDamage: 2
+  knockbackPower: 1000
   isPlayerSource: 1
-  knockbackPower: 5000
   detectedObjs: []
 --- !u!1 &8408653906253658920
 GameObject:
@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 67174848560728082}
   - component: {fileID: 3006072063010217669}
   - component: {fileID: 1580024596836123036}
-  - component: {fileID: -1615490309724228351}
   - component: {fileID: 7219449670474931350}
   - component: {fileID: 5958942439428458502}
   m_Layer: 0
@@ -355,21 +354,6 @@ MonoBehaviour:
   blinkColor: {r: 255, g: 255, b: 255, a: 0}
   timesOfBLinking: 4
   blinkingSpeed: 0.05
---- !u!114 &-1615490309724228351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8408653906253658920}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fbe22f77edf958469de17c6edd12804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 5000
-  precisionMul: 100
-  onceOnly: 0
 --- !u!81 &7219449670474931350
 AudioListener:
   m_ObjectHideFlags: 0

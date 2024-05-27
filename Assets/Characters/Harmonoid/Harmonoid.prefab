@@ -1553,7 +1553,6 @@ GameObject:
   - component: {fileID: 6295129166732655827}
   - component: {fileID: 4251880683540635640}
   - component: {fileID: 8715006706196295109}
-  - component: {fileID: 6415296702145301590}
   - component: {fileID: 8025807960216341466}
   m_Layer: 0
   m_Name: Harmonoid
@@ -1758,21 +1757,6 @@ MonoBehaviour:
   followOffGui: {fileID: 0}
   stepL: {fileID: 8300000, guid: b8ee560ec33f22647878ba7461eb6ca9, type: 3}
   stepR: {fileID: 8300000, guid: d91dc1cc523b325448ef5cefbc72f1fb, type: 3}
---- !u!114 &6415296702145301590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4865328277028110624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fbe22f77edf958469de17c6edd12804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 5000
-  precisionMul: 100
-  onceOnly: 0
 --- !u!82 &8025807960216341466
 AudioSource:
   m_ObjectHideFlags: 0

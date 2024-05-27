@@ -1227,9 +1227,9 @@ GameObject:
   m_Component:
   - component: {fileID: 525409021}
   - component: {fileID: 525409022}
-  - component: {fileID: 525409023}
   - component: {fileID: 525409024}
-  m_Layer: 0
+  - component: {fileID: 525409023}
+  m_Layer: 7
   m_Name: Level1Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1544,7 +1544,7 @@ EdgeCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2607,7 +2607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.349243, y: -113.76672}
+  m_AnchoredPosition: {x: 50.34912, y: -113.76672}
   m_SizeDelta: {x: 29.9492, y: 30.6668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &822242437
@@ -15895,9 +15895,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.0012666244
     width: 1
-    height: 1
+    height: 0.99810004
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19136,6 +19136,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 441961604857885024}
     - target: {fileID: 6132222544114838297, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: tickEvery
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132222544114838297, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: highColor.b
       value: 0.38095662
       objectReference: {fileID: 0}
@@ -19601,10 +19605,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
-    - target: {fileID: -1615490309724228351, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1603026970460628626, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_Size.x
       value: 0.68313074
@@ -19773,10 +19773,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8184438080768356726, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: attackDamage
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8408653906253658920, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_Name
       value: Girl
@@ -19809,7 +19805,8 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -20626,7 +20623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.349243, y: -113.76672}
+  m_AnchoredPosition: {x: 50.34912, y: -113.76672}
   m_SizeDelta: {x: 29.9492, y: 30.6668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6157868809104096261

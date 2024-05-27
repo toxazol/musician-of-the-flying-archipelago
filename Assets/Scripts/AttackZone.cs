@@ -5,8 +5,8 @@ using UnityEngine;
 public class AttackZone : MonoBehaviour
 {
     public int attackDamage = 1;
+    public float knockbackPower = 5000f;
     [SerializeField] private bool isPlayerSource = true;
-    [SerializeField] private float knockbackPower = 5000f;
 
     public List<Collider2D> detectedObjs = new();
 

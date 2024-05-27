@@ -18,6 +18,8 @@ public class BorderController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
  
+        if(!other.isTrigger) return; // small circle collider inside enemy is used to detect if it's outside the border 
+
         if(other.gameObject.TryGetComponent(out IFallable fallable))
         {
             fallable.OnFall(GetComponent<EdgeCollider2D>());
