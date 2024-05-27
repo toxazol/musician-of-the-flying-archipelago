@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,13 +7,13 @@ public class FixedLooper : MonoBehaviour
 {
     [SerializeField] private int bars = 4;
     [SerializeField] private int noteDivision = 8;
-    [SerializeField] private int trackLen;
+    [SerializeField] public int trackLen;
     [SerializeField] public struct Note
     {
         public bool isActive;
         public Toggle toggle;
     }
-    [SerializeField] private Note[] notes;
+    [SerializeField] public Note[] notes;
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private int tickEvery = 0;
     [SerializeField] private bool isPause = false;
@@ -28,6 +30,7 @@ public class FixedLooper : MonoBehaviour
     private int frame = 0;
     private int pulse = 0;
     private AudioSource audioSource;
+    public event Action OnNoteChange;
     
 
     void Start()
@@ -81,6 +84,8 @@ public class FixedLooper : MonoBehaviour
             toggle.isOn = notes[i].isActive;
             toggle.onValueChanged.AddListener((val)=>{
                 notes[index].isActive = val;
+                OnNoteChange?.Invoke();
+                // Utilities.logArr(notes.Select(n=>n.isActive).ToArray());
             });
         }
     }
@@ -110,7 +115,14 @@ public class FixedLooper : MonoBehaviour
             if(isRhythmGame)
                 UpdateHitRow();
             if(notes[pulse].isActive)
+            {
                 audioSource.Play();
+                // EventManager.TriggerNotePlay(this.gameObject.name);
+            } else {
+                // EventManager.TriggerNotePlay("Pause");
+            }
+            
+                
             pulse++;
         }
             
