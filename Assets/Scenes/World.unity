@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -363,7 +362,7 @@ MonoBehaviour:
   targetRow: {fileID: 6525789812575678175}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &95218942
@@ -1159,6 +1158,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293315118}
   m_CullTransparentMesh: 1
+--- !u!114 &308324404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1003466499057489969, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+  m_PrefabInstance: {fileID: 3512869969261553914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &351701671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4658419419853635215, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
@@ -1550,7 +1560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -1564,7 +1573,7 @@ MonoBehaviour:
   targetRow: {fileID: 5711984032764749876}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &474397748 stripped
@@ -1713,7 +1722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -1727,7 +1735,7 @@ MonoBehaviour:
   targetRow: {fileID: 2642430811699660487}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &513579024
@@ -1868,26 +1876,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 513579024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4d2bea133b0fb4f9025125441fd7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 0
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  tickEvery: 2
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  playerAttack: {fileID: 0}
-  targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+  targetLooper: {fileID: 1940047539}
+  fpb: 8
+  trackLen: 32
+  correctNotes: 
+  isPause: 1
+  isGuessed: 0
 --- !u!1 &525409019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,7 +2684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -2701,7 +2697,7 @@ MonoBehaviour:
   targetRow: {fileID: 4107904852536573320}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 1499215179}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &570687195 stripped
@@ -3061,26 +3057,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 633623095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4d2bea133b0fb4f9025125441fd7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 0
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  tickEvery: 2
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  playerAttack: {fileID: 0}
-  targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+  targetLooper: {fileID: 1625070991}
+  fpb: 8
+  trackLen: 32
+  correctNotes: 
+  isPause: 1
+  isGuessed: 0
 --- !u!1 &639988787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,7 +3431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -3460,7 +3444,7 @@ MonoBehaviour:
   targetRow: {fileID: 2393142848562938184}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 1499215179}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &767152317
@@ -4242,6 +4226,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1123790771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4720741918049077964, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+  m_PrefabInstance: {fileID: 3512869969261553914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1145048219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 759953787444508453, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+  m_PrefabInstance: {fileID: 3512869969261553914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1147994822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,7 +4464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -4472,7 +4477,7 @@ MonoBehaviour:
   targetRow: {fileID: 441961604857885024}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 1499215179}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1205624534
@@ -4691,7 +4696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1261508301
 Transform:
   m_ObjectHideFlags: 0
@@ -4756,25 +4761,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287056528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63bd053da10b834aa72d47c0f498e44, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d6a3b2182e07e84eab5721487fa4912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpb: 8
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  userFrameDelta: -7
-  userFrameTolerance: 3
-  indicationSecs: 0.3
-  buffSecs: 0.3
-  hitIndicator: {fileID: 0}
-  playerAttack: {fileID: 0}
-  damageRhythm: 0
-  damageDefault: 0
-  knockBackRhythm: 0
-  knockBackDefault: 0
+  fixedBloopers:
+  - {fileID: 1819642894}
+  - {fileID: 1806118565}
+  - {fileID: 1983683443}
+  - {fileID: 513579027}
+  - {fileID: 633623098}
 --- !u!1 &1310370232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,7 +5377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -5396,7 +5390,7 @@ MonoBehaviour:
   targetRow: {fileID: 3812588576744133311}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1468976437 stripped
@@ -17398,6 +17392,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3986852269281604082, guid: 37d3f871537631b4592fd16c688351a4, type: 3}
   m_PrefabInstance: {fileID: 1612556904}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625070991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6054294224149092616, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+  m_PrefabInstance: {fileID: 3512869969261553914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1647441664
 GameObject:
   m_ObjectHideFlags: 0
@@ -17455,9 +17460,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0012666244
+    y: 0
     width: 1
-    height: 0.99810004
+    height: 0.99941343
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -17610,7 +17615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1652192224
 Transform:
   m_ObjectHideFlags: 0
@@ -18553,26 +18558,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806118562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4d2bea133b0fb4f9025125441fd7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 0
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  tickEvery: 2
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  playerAttack: {fileID: 0}
-  targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+  targetLooper: {fileID: 1123790771}
+  fpb: 8
+  trackLen: 32
+  correctNotes: 
+  isPause: 1
+  isGuessed: 0
 --- !u!1 &1819642891
 GameObject:
   m_ObjectHideFlags: 0
@@ -18711,26 +18705,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819642891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4d2bea133b0fb4f9025125441fd7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 0
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  tickEvery: 2
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  playerAttack: {fileID: 0}
-  targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+  targetLooper: {fileID: 308324404}
+  fpb: 8
+  trackLen: 32
+  correctNotes: 
+  isPause: 1
+  isGuessed: 0
 --- !u!1 &1872885542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4865328277028110624, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
@@ -18806,6 +18789,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+--- !u!114 &1940047539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5779366078147512906, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+  m_PrefabInstance: {fileID: 3512869969261553914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1972466692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4658419419853635215, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
@@ -18949,26 +18943,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1983683440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4d2bea133b0fb4f9025125441fd7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 0
-  bars: 4
-  noteDivision: 8
-  trackLen: 0
-  cellPrefab: {fileID: 5530654423182708181, guid: 4d279a7c3b3947444ae4e0a33e775984, type: 3}
-  tickEvery: 2
-  isPause: 0
-  isHighlighted: 0
-  highColor: {r: 0.45490196, g: 0.41960785, b: 0.3254902, a: 1}
-  isRhythmGame: 0
-  hitIndicator: {fileID: 0}
-  targetRow: {fileID: 0}
-  playerAttack: {fileID: 0}
-  targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
+  targetLooper: {fileID: 1145048219}
+  fpb: 8
+  trackLen: 32
+  correctNotes: 
+  isPause: 1
+  isGuessed: 0
 --- !u!1 &2016658554
 GameObject:
   m_ObjectHideFlags: 0
@@ -19185,7 +19168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasUI: 1
   bars: 4
   noteDivision: 8
   trackLen: 0
@@ -19199,7 +19181,7 @@ MonoBehaviour:
   targetRow: {fileID: 8743953774374384613}
   playerAttack: {fileID: 0}
   targetHitRow: {fileID: 0}
-  settings: {fileID: 1287056530}
+  settings: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   initHitRowColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &2121037136 stripped
@@ -22411,6 +22393,7 @@ GameObject:
   - component: {fileID: 7226593165638253963}
   - component: {fileID: 3789916326069387947}
   - component: {fileID: 4247908608102291297}
+  - component: {fileID: 7226593165638253964}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -23470,6 +23453,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7226593165638253964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055481361158133497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c49001390f214448ffcf23652c4e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7227683165963569094
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ public class FixedBlooper : MonoBehaviour
 
     [SerializeField] private List<bool> correctNotes = new();
     
-    [SerializeField] private bool isPause = false;
+    public bool isPause = true;
+
+    public bool isGuessed = false;
     
     
     private int frame = 0;
@@ -43,43 +45,31 @@ public class FixedBlooper : MonoBehaviour
         frame++;
     }
 
-
-    void OnToggleMusic()
-    {
-        isPause = !isPause;
-    }
-
-
     void OnEnable()
     {
-        EventManager.OnNotePlay += OnNotePlay;
         targetLooper.OnNoteChange += OnNoteChange;
     }
 
     void OnDisable()
     {
-        EventManager.OnNotePlay -= OnNotePlay;
         targetLooper.OnNoteChange -= OnNoteChange;
     }
 
-    void OnNotePlay(string note)
-    {
-        Debug.Log("Blob heard " + note);
-    }
     void OnNoteChange()
     {
-        Debug.Log("Note changed");
-        if(CompareMelody()) {
-            Debug.Log("Melody guessed correctly!");
-        }
+        CompareMelody();
     }
 
-    bool CompareMelody() {
+    public void CompareMelody() {
         for(int i = 0; i < targetLooper.notes.Length; i++) {
-            if(targetLooper.notes[i].isActive != correctNotes[i])
-                return false;
+            if(targetLooper.notes[i].isActive != correctNotes[i]){
+                isGuessed = false;
+                return;
+            }
         }
-        return true;
+        // Debug.Log("Blooper " + this.gameObject.name + "'s melody guessed correctly!");
+        isGuessed = true;
+        EventManager.TriggerBlooperGuess();
     }
 
 }

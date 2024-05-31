@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public static event Action<string> OnNotePlay;
-
-    public static void TriggerNotePlay(string note)
+    public static event Action OnBlooperGuessed;
+    public static void TriggerBlooperGuess()
     {
-        OnNotePlay?.Invoke(note);
+        OnBlooperGuessed?.Invoke(); 
     }
 }

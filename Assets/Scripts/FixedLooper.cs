@@ -59,6 +59,7 @@ public class FixedLooper : MonoBehaviour
         {
             InitTicker(tickEvery);
         }
+        OnNoteChange?.Invoke(); // to trigger isGuessed init
         InitGrid();
     }
 
@@ -117,9 +118,6 @@ public class FixedLooper : MonoBehaviour
             if(notes[pulse].isActive)
             {
                 audioSource.Play();
-                // EventManager.TriggerNotePlay(this.gameObject.name);
-            } else {
-                // EventManager.TriggerNotePlay("Pause");
             }
             
                 
