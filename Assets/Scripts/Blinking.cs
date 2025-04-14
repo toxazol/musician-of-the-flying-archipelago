@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Blinking : MonoBehaviour
 {
-    [SerializeField] private Color blinkColor = new Color(255f, 255f, 255f, 0f);
+    [SerializeField] private Color blinkColor = new Color(1f, 1f, 1f, 0f);
     [SerializeField] private int timesOfBLinking = 2;
     [SerializeField] private float blinkingSpeed = 0.1f;
     
@@ -50,6 +50,6 @@ public class Blinking : MonoBehaviour
 
     private void DisableBlink()
     {
-        spriteRenderer.color = new Color(255f, 255f, 255f, 255f);
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
     }
 }

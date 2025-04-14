@@ -57,7 +57,7 @@ public class FixedBlooper : MonoBehaviour
 
     void OnNoteChange()
     {
-        CompareMelody();
+        // CompareMelody();
     }
 
     public void CompareMelody() {

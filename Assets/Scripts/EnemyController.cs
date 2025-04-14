@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
     {
         rb.gravityScale = fallGravityScale;
         gameObject.GetComponent<Collider2D>().enabled = false;
-        if(rb.velocity.y <= 0) return;
+        if(rb.linearVelocity.y <= 0) return;
         // enemy falls behing the island if hit upwards
         sr.sortingLayerName = "Background";
     }

@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -252,6 +248,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cd46fb65a1989824cb172070dbb8915c, type: 3}
+  m_Resource: {fileID: 8300000, guid: cd46fb65a1989824cb172070dbb8915c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -465,15 +462,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -548,6 +547,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -591,6 +593,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: enemyName
       value: Boss
@@ -771,6 +777,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
@@ -989,6 +999,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1124,15 +1137,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1274,15 +1289,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1463,6 +1480,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 91e9b11df8ec77e4b9566cbbe6901fcb, type: 3}
+  m_Resource: {fileID: 8300000, guid: 91e9b11df8ec77e4b9566cbbe6901fcb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -1625,6 +1643,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c9f0fd6176f927e4ba96616bb010962a, type: 3}
+  m_Resource: {fileID: 8300000, guid: c9f0fd6176f927e4ba96616bb010962a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -1782,6 +1801,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 263db948ef55b8c4cad681b6c4380cef, type: 3}
+  m_Resource: {fileID: 8300000, guid: 263db948ef55b8c4cad681b6c4380cef, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -1927,6 +1947,7 @@ EdgeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525409019}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1950,7 +1971,8 @@ EdgeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
@@ -2205,6 +2227,7 @@ EdgeCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525409019}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2228,7 +2251,8 @@ EdgeCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
@@ -2587,6 +2611,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3051bf99819904d488f260adeb09aa19, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3051bf99819904d488f260adeb09aa19, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -2754,6 +2779,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2797,6 +2825,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
@@ -2862,6 +2894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
@@ -2963,6 +2999,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 22e8dafbc01280c4fae99e087b5a1f34, type: 3}
+  m_Resource: {fileID: 8300000, guid: 22e8dafbc01280c4fae99e087b5a1f34, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -3150,6 +3187,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
@@ -3255,6 +3296,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3334,6 +3378,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63ae862c6ff201c4c955a1a1cde00e74, type: 3}
+  m_Resource: {fileID: 8300000, guid: 63ae862c6ff201c4c955a1a1cde00e74, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -3629,6 +3674,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3790,6 +3838,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a03ee7da500cc7949a73265f911352dc, type: 3}
+  m_Resource: {fileID: 8300000, guid: a03ee7da500cc7949a73265f911352dc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -4004,6 +4053,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4191,6 +4243,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4367,6 +4422,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 074203ea84763f14bbca76791457e856, type: 3}
+  m_Resource: {fileID: 8300000, guid: 074203ea84763f14bbca76791457e856, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -4529,6 +4585,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4819,6 +4878,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5114,15 +5176,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5280,6 +5344,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63a5fc596c942f34eadcafb52a9c8d8e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 63a5fc596c942f34eadcafb52a9c8d8e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -5726,6 +5791,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
@@ -5831,6 +5900,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17462,7 +17534,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.99941343
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -17536,12 +17608,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &1647441669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17783,6 +17855,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17901,6 +17976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
@@ -18224,6 +18303,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
@@ -18364,6 +18447,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
@@ -18464,6 +18551,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce038d3d5eaef9043b8d4a83b542223c, type: 3}
+  m_Resource: {fileID: 8300000, guid: ce038d3d5eaef9043b8d4a83b542223c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -18611,6 +18699,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c5f632bcde7b1df4b863787166bd1185, type: 3}
+  m_Resource: {fileID: 8300000, guid: c5f632bcde7b1df4b863787166bd1185, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -18733,6 +18822,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
@@ -18849,6 +18942,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 69649c525c3bed3499c669ec57954b20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 69649c525c3bed3499c669ec57954b20, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -19071,6 +19165,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 53c4d6f89ff721d4b8b815e63fbc7c9a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 53c4d6f89ff721d4b8b815e63fbc7c9a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -19466,15 +19561,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19585,15 +19682,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -19693,15 +19792,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20306,15 +20407,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -20513,6 +20616,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3051bf99819904d488f260adeb09aa19, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3051bf99819904d488f260adeb09aa19, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -20734,6 +20838,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f0c6cd882740f8a4d8c01ad798116ed0, type: 3}
+  m_Resource: {fileID: 8300000, guid: f0c6cd882740f8a4d8c01ad798116ed0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -20901,15 +21006,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21024,15 +21131,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21428,6 +21537,10 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 074203ea84763f14bbca76791457e856, type: 3}
+    - target: {fileID: 8604629750945102888, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: MaxDistance
       value: 9
       objectReference: {fileID: 0}
@@ -21779,15 +21892,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21813,21 +21928,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
-    - target: {fileID: 1603026970460628626, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Size.x
-      value: 0.68313074
+    - target: {fileID: 1580024596836123036, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1603026970460628626, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19003522
+    - target: {fileID: 1580024596836123036, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: blinkColor.a
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1603026970460628626, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.049925566
+    - target: {fileID: 1580024596836123036, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: blinkColor.b
+      value: 0.74901974
       objectReference: {fileID: 0}
-    - target: {fileID: 1603026970460628626, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.16137332
+    - target: {fileID: 1580024596836123036, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: blinkColor.g
+      value: 0.74901974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580024596836123036, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: blinkColor.r
+      value: 0.74901974
       objectReference: {fileID: 0}
     - target: {fileID: 1803642474959342318, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21869,117 +21988,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
+    - target: {fileID: 2727496482099349105, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1845375977, guid: bbca7b8a3d6f4e741bd9937e07510a06, type: 3}
+    - target: {fileID: 2727496482099349105, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 1.114851
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.9124863
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: 1.0845442
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 1.2428684
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 0.9411349
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 1.717897
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -0.017858893
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 1.8756624
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: -0.09117538
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: 0.71978766
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
-      value: -0.052247763
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
-      value: -0.31508803
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
-      value: 1.0634199
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
-      value: -0.012140632
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
-      value: 1.1146955
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
-      value: 0.7606694
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369047617384727864, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2727496482099349105, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_SpriteSortPoint
+      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5216405326385975249, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216405326385975249, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216405326385975249, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+    - target: {fileID: 2727496482099349105, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8408653906253658920, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: m_Name
@@ -21989,18 +22012,6 @@ PrefabInstance:
       propertyPath: hpUI
       value: 
       objectReference: {fileID: 2812117776136059240}
-    - target: {fileID: 8907145102921236797, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: punch
-      value: 
-      objectReference: {fileID: 8300000, guid: fe07bc8b978e75c4086d51306a1d4836, type: 3}
-    - target: {fileID: 8907145102921236797, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: stepL
-      value: 
-      objectReference: {fileID: 8300000, guid: f5f17a3ba2fcb7d4b8a0cf36199aaea1, type: 3}
-    - target: {fileID: 8907145102921236797, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
-      propertyPath: stepR
-      value: 
-      objectReference: {fileID: 8300000, guid: 4b3ebc1fe6266bb4f892e5b9f950dedc, type: 3}
     - target: {fileID: 8907145102921236797, guid: d2b5b2ba64b00314696dfe716b3b043f, type: 3}
       propertyPath: harmonoid
       value: 
@@ -22013,8 +22024,7 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1652334333}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -22123,6 +22133,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!224 &4254458449459624325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22202,6 +22213,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1652334334}
     m_Modifications:
+    - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
+      propertyPath: isDummy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 660693877201097731, guid: 7a3fe7aced1083c428fa47e335ed04f9, type: 3}
       propertyPath: levelManager
       value: 
@@ -23575,15 +23590,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -23939,15 +23956,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -24173,15 +24192,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
