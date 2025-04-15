@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AttackZone : MonoBehaviour
 {
-    public int attackDamage = 1;
-    public float knockbackPower = 5000f;
+    [field: SerializeField] public int AttackDamage { get; set; } = 1;
+    [field: SerializeField] public float KnockbackPower { get; set; } = 5000f;
     [SerializeField] private bool isPlayerSource = true;
 
     public List<Collider2D> detectedObjs = new();
@@ -29,11 +29,11 @@ public class AttackZone : MonoBehaviour
         
         if (collider.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            damageable.OnHit(attackDamage);
+            damageable.OnHit(AttackDamage);
         }
         if (collider.gameObject.TryGetComponent(out IKnockbackable knockbackable))
         {
-            knockbackable.OnKnockback(knockbackPower);
+            knockbackable.OnKnockback(KnockbackPower);
         }
     }
     

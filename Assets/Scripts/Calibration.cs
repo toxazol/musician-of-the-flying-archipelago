@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class Calibration : MonoBehaviour
 {
-    public int userFrameDelta = 0;
+    [SerializeField] private int userFrameDelta = 0;
 
     [SerializeField] private int fpb = 8; // frames per beat 
-    [SerializeField] private int bars = 4;
     [SerializeField] private int noteDivision = 8;
     [SerializeField] private int trackLen;
     [SerializeField] private int tickEvery = 4;
@@ -26,7 +25,7 @@ public class Calibration : MonoBehaviour
 
     void Start()
     {
-        trackLen = bars * noteDivision; 
+        trackLen = targetSettings.Bars * noteDivision; 
         notes = new bool[trackLen];
         
         audioSource = GetComponent<AudioSource>();
@@ -69,7 +68,7 @@ public class Calibration : MonoBehaviour
         int nextBeatFrame = lastBeatFrame + fpb * tickEvery;
         int nextDelta = nextBeatFrame - fireFrame;
         userFrameDelta = nextDelta < prevDelta ? -1 * nextDelta : prevDelta;
-        targetSettings.userFrameDelta = userFrameDelta;
+        targetSettings.UserFrameDelta = userFrameDelta;
     }
 
 }

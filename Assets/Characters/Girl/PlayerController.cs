@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void UpdateCraftTooltip()
     {
-        if(GetDistanceToHarmonoid() > levelManager.craftOpenRange)
+        if(GetDistanceToHarmonoid() > levelManager.CraftOpenRange)
         {
             harmonoid.transform.Find("CraftTooltip").gameObject.SetActive(false);
         } else {
@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             isAnimationBlocked = true;
             attackAnimationCounter++;
-            Invoke("DeacreaceAttackCounter", 1f);
+            Invoke(nameof(DeacreaceAttackCounter), 1f);
         }
     }
 
@@ -211,7 +211,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void StartInvulnerability()
     {
         isInvulnerable++;
-        Invoke("CancelInvulnerability", invulnerabilityTime);
+        Invoke(nameof(CancelInvulnerability), invulnerabilityTime);
     }
 
     private void CancelInvulnerability()

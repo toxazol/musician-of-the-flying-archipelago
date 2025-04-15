@@ -346,7 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
@@ -1578,7 +1577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
@@ -1741,7 +1739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
@@ -1903,8 +1900,8 @@ MonoBehaviour:
   fpb: 8
   trackLen: 32
   correctNotes: 
-  isPause: 1
-  isGuessed: 0
+  <isPause>k__BackingField: 1
+  <isGuessed>k__BackingField: 0
 --- !u!1 &525409019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 671732002eb141549b7a101f38d5424d, type: 3}
@@ -3101,8 +3097,8 @@ MonoBehaviour:
   fpb: 8
   trackLen: 32
   correctNotes: 
-  isPause: 1
-  isGuessed: 0
+  <isPause>k__BackingField: 1
+  <isGuessed>k__BackingField: 0
 --- !u!1 &639988787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,7 +3472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
@@ -4520,7 +4515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: f54c77fe743960c40a32a38d3f18ee2a, type: 3}
@@ -5442,7 +5436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: ee7ccdedd46ed0b48a37aac9b9c613d3, type: 3}
@@ -17744,7 +17737,7 @@ MonoBehaviour:
   craftUI: {fileID: 6442105556499988606}
   player: {fileID: 822315380}
   looper: {fileID: 539117469}
-  craftOpenRange: 3
+  <CraftOpenRange>k__BackingField: 3
 --- !u!4 &1652334334
 Transform:
   m_ObjectHideFlags: 0
@@ -18653,8 +18646,8 @@ MonoBehaviour:
   fpb: 8
   trackLen: 32
   correctNotes: 
-  isPause: 1
-  isGuessed: 0
+  <isPause>k__BackingField: 1
+  <isGuessed>k__BackingField: 0
 --- !u!1 &1819642891
 GameObject:
   m_ObjectHideFlags: 0
@@ -18801,8 +18794,8 @@ MonoBehaviour:
   fpb: 8
   trackLen: 32
   correctNotes: 
-  isPause: 1
-  isGuessed: 0
+  <isPause>k__BackingField: 1
+  <isGuessed>k__BackingField: 0
 --- !u!1 &1872885542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4865328277028110624, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
@@ -19044,8 +19037,8 @@ MonoBehaviour:
   fpb: 8
   trackLen: 32
   correctNotes: 
-  isPause: 1
-  isGuessed: 0
+  <isPause>k__BackingField: 1
+  <isGuessed>k__BackingField: 0
 --- !u!1 &2016658554
 GameObject:
   m_ObjectHideFlags: 0
@@ -19263,7 +19256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0290206cb54842b5d048642eaf3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bars: 4
   noteDivision: 8
   trackLen: 0
   cellPrefab: {fileID: 5530654423182708181, guid: 13d06bdfc6d28ee459b6c24167f363be, type: 3}
@@ -21428,6 +21420,26 @@ PrefabInstance:
       propertyPath: playerAttack
       value: 
       objectReference: {fileID: 1740552102}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: <HighColor>k__BackingField.b
+      value: 0.3254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: <HighColor>k__BackingField.g
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: <HighColor>k__BackingField.r
+      value: 0.45490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: <HitIndicator>k__BackingField
+      value: 
+      objectReference: {fileID: 9030229985903775757}
+    - target: {fileID: 5164434256037318809, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
+      propertyPath: <PlayerAttack>k__BackingField
+      value: 
+      objectReference: {fileID: 1740552102}
     - target: {fileID: 5468545827613757072, guid: 0985dcdab73c0d4419dd96edf47c5000, type: 3}
       propertyPath: m_Volume
       value: 0.4
@@ -21662,7 +21674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userFrameDelta: 0
   fpb: 8
-  bars: 4
   noteDivision: 8
   trackLen: 0
   tickEvery: 4

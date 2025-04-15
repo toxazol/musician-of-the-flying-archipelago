@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject looper;
-    public float craftOpenRange = 3.0f;
+    [field: SerializeField] public float CraftOpenRange { get; private set; } = 3.0f;
     
     private  PlayerInput playerInput;
     private bool isPaused = false;
@@ -68,7 +68,7 @@ public class LevelManager : MonoBehaviour
     bool CheckPlayerFar()
     {
         var playerControl = player.GetComponent<PlayerController>();
-        return playerControl.GetDistanceToHarmonoid() > craftOpenRange;
+        return playerControl.GetDistanceToHarmonoid() > CraftOpenRange;
     }
     public void LoadDeathMenu()
     {

@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class LooperSettings : MonoBehaviour
 {
-    public int fpb = 8; // frames per beat 
-    public int bars = 4;
-    public int noteDivision = 8;
-    public int trackLen;
-    public bool isHighlighted = false;
-    public Color highColor;
-    public int userFrameDelta = -16;
-    public int userFrameTolerance = 2;
-    public float indicationSecs = 0.3f;
-    public float buffSecs = 0.3f;
-    public GameObject hitIndicator;
-    public AttackZone playerAttack;
-    public int damageRhythm = 20;
-    public int damageDefault = 2;
-    public float knockBackRhythm = 6000f;
-    public float knockBackDefault = 1000f;
+    [field: SerializeField] public int Fpb {get; private set;} = 8; // frames per beat 
+    [field: SerializeField] public int Bars {get; private set;} = 4;
+    [field: SerializeField] public int NoteDivision {get; private set;} = 8;
+    [field: SerializeField] public int TrackLen {get; private set;} = 0;
+    [field: SerializeField] public bool IsHighlighted {get; private set;} = false;
+    [field: SerializeField] public Color HighColor {get; private set;}
+    [field: SerializeField] public int UserFrameDelta {get; set;} = -7;
+    [field: SerializeField] public int UserFrameTolerance {get; private set;} = 3;
+    [field: SerializeField] public float IndicationSecs {get; private set;} = 0.3f;
+    [field: SerializeField] public float BuffSecs {get; private set;} = 0.3f;
+    [field: SerializeField] public GameObject HitIndicator {get; private set;}
+    [field: SerializeField] public AttackZone PlayerAttack {get; private set;}
+    [field: SerializeField] public int DamageRhythm {get; private set;} = 20;
+    [field: SerializeField] public int DamageDefault {get; private set;} = 2;
+    [field: SerializeField] public float KnockBackRhythm {get; private set;} = 6000f;
+    [field: SerializeField] public float KnockBackDefault {get; private set;} = 1000f;
 
 }

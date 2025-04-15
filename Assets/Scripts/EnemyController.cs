@@ -15,9 +15,9 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable, IFallable
     [SerializeField] private bool isDummy = false;
     [SerializeField] private LevelManager levelManager;
 
-    Blinking blinking;
-    Animator animator;
-    Rigidbody2D rb;
+    private Blinking blinking;
+    private Animator animator;
+    private Rigidbody2D rb;
 
     private bool isAttack = false;
     

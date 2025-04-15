@@ -22,7 +22,7 @@ public class DamageDisplay : MonoBehaviour
 
         DisplayDamage(true);
         animator.SetTrigger("Combo");
-        Invoke("DecreaseCounter", 0.8f);
+        Invoke(nameof(DecreaseCounter), 0.8f);
     }
 
     private void DecreaseCounter()
@@ -30,7 +30,7 @@ public class DamageDisplay : MonoBehaviour
         iterations--;
         if (iterations < 1)
         {
-            Invoke("ResetStackedDamage", 0.05f);
+            Invoke(nameof(ResetStackedDamage), 0.05f);
             DisplayDamage(false);
         }
     }

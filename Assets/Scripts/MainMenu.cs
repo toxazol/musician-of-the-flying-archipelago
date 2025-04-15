@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadGame()
     {
-        // TODO
         SceneManager.LoadScene("World");
     }
     public void Exit()

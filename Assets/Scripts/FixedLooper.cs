@@ -1,19 +1,20 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FixedLooper : MonoBehaviour
 {
-    [SerializeField] private int bars = 4;
-    [SerializeField] private int noteDivision = 8;
-    [SerializeField] public int trackLen;
-    [SerializeField] public struct Note
+    public struct Note
     {
         public bool isActive;
         public Toggle toggle;
     }
-    [SerializeField] public Note[] notes;
+    public Note[] notes;
+    public event Action OnNoteChange;
+
+    [SerializeField] private int noteDivision = 8;
+    [SerializeField] private int trackLen;
+
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private int tickEvery = 0;
     [SerializeField] private bool isPause = false;
@@ -30,28 +31,22 @@ public class FixedLooper : MonoBehaviour
     private int frame = 0;
     private int pulse = 0;
     private AudioSource audioSource;
-    public event Action OnNoteChange;
     
 
     void Start()
     {
-        noteDivision = settings.noteDivision;
-        isHighlighted = settings.isHighlighted;
-        // highColor = settings.highColor;
-        hitIndicator = settings.hitIndicator;
-        playerAttack = settings.playerAttack;
+        noteDivision = settings.NoteDivision;
+        isHighlighted = settings.IsHighlighted;
+        hitIndicator = settings.HitIndicator;
+        playerAttack = settings.PlayerAttack;
 
         if(isRhythmGame)
         {
-            // selectedColor = cellPrefab.transform.Find("Selected")
-            //     .GetComponent<Image>().color;
-            // initHitRowColor = targetHitRow.transform.GetChild(0)
-            //     .GetComponent<Image>().color;
             selectedColor = Color.red;
             initHitRowColor = Color.white;
         }
 
-        trackLen = bars * noteDivision; 
+        trackLen = settings.Bars * noteDivision; 
         notes = new Note[trackLen];
         
         audioSource = GetComponent<AudioSource>();
@@ -111,7 +106,7 @@ public class FixedLooper : MonoBehaviour
 
         MoveCaret();
 
-        if(frame % settings.fpb == 0)
+        if(frame % settings.Fpb == 0)
         {
             if(isRhythmGame)
                 UpdateHitRow();
@@ -163,9 +158,9 @@ public class FixedLooper : MonoBehaviour
         if(!isRhythmGame || isPause)
             return;
         
-        int fireFrame = frame + settings.userFrameDelta;
-        int from = fireFrame - settings.userFrameTolerance;
-        int to = fireFrame + settings.userFrameTolerance;
+        int fireFrame = frame + settings.UserFrameDelta;
+        int from = fireFrame - settings.UserFrameTolerance;
+        int to = fireFrame + settings.UserFrameTolerance;
         for(int i = fireFrame, step = 1; i >= from && i <= to;)
         {
             int firePulse = GetPulseFromFrame(i);   
@@ -184,20 +179,20 @@ public class FixedLooper : MonoBehaviour
 
     void BuffDamamge()
     {
-        playerAttack.attackDamage = settings.damageRhythm;
-        playerAttack.knockbackPower = settings.knockBackRhythm;
-        Invoke("StopBuffDamamge", settings.buffSecs);
+        playerAttack.AttackDamage = settings.DamageRhythm;
+        playerAttack.KnockbackPower = settings.KnockBackRhythm;
+        Invoke(nameof(StopBuffDamamge), settings.BuffSecs);
     }
     void StopBuffDamamge()
     {
-        playerAttack.attackDamage = settings.damageDefault;
-        playerAttack.knockbackPower = settings.knockBackDefault;
+        playerAttack.AttackDamage = settings.DamageDefault;
+        playerAttack.KnockbackPower = settings.KnockBackDefault;
     }
 
     void ShowHit()
     {
         hitIndicator.GetComponent<Image>().color = Color.green;
-        Invoke("StopIndication", settings.indicationSecs);
+        Invoke(nameof(StopIndication), settings.IndicationSecs);
     }
 
     void StopIndication()
@@ -207,10 +202,10 @@ public class FixedLooper : MonoBehaviour
 
     int GetPulseFromFrame(int frame)
     {
-        if(frame % settings.fpb > 0)
+        if(frame % settings.Fpb > 0)
             return -1;
 
-        int pulses = frame / settings.fpb + 1;
+        int pulses = frame / settings.Fpb + 1;
         int curPulse = pulses % trackLen;
 
         return curPulse; 

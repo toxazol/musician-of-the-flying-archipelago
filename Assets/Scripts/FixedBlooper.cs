@@ -10,9 +10,9 @@ public class FixedBlooper : MonoBehaviour
 
     [SerializeField] private List<bool> correctNotes = new();
     
-    public bool isPause = true;
+    [field: SerializeField] public bool isPause {get; set;} = true;
 
-    public bool isGuessed = false;
+    [field: SerializeField] public bool isGuessed {get; private set;} = false;
     
     
     private int frame = 0;

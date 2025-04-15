@@ -33,11 +33,11 @@ public class Blinking : MonoBehaviour
         float time = 0f;
         for (int i = 0; i < times; i++)
         {
-            Invoke("EnableBlink", time);
+            Invoke(nameof(EnableBlink), time);
             time += speed;
             if (recover)
             {
-                Invoke("DisableBlink", time);
+                Invoke(nameof(DisableBlink), time);
                 time += speed;
             }
         }
